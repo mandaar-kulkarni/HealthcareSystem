@@ -1,0 +1,41 @@
+<!-- <script>
+  function validateEmail(){
+   var mailformat= /^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,3})+$/;
+   var email=document.getElementById("email").value;
+  if (email.value.match(mailformat))
+  {
+    return true;
+  }
+    alert("You have entered an invalid email address!");
+    return false;
+  }
+
+</script> -->
+
+<div class="container card" style="margin-top: 25vh; width: 450px">
+<form action="#" name="form1" [formGroup]="loginForm" (ngSubmit)="collectData()" >
+
+  <div class="form-group" style="margin: 10px;">
+    <label for="email" >Email ID</label>
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="email" formControlName="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+    </div>
+    <!-- <span *ngIf="email.invalid && (email.touched)" class="error">email is required</span> -->
+  </div>
+  <div class="form-group " style="margin: 10px;">
+    <label for="pwd">Password</label>
+    <div class="input-group">
+      <span class="input-group-text" id="basic-addon1"><img src="https://www.pinclipart.com/picdir/big/130-1303682_security-password-2-icon-password-icon-in-png.png" width="15px" height="17px" ></span>
+        <input type="password" formControlName="password" name="password" class="form-control" id="password">
+     </div>
+    <!-- <span *ngIf="password.invalid && (password.touched)" class="error">password is required</span> -->
+  </div>
+<fieldset>
+<button type="submit" class="btn btn-primary" onclick="error">Submit</button>
+<button type="register" style="float: right; margin-bottom: 15px;" class="btn btn-secondary" [routerLink]="['/register']">Register</button>
+
+</fieldset>
+</form>
+</div>
+

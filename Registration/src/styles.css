@@ -1,0 +1,8 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.mainWindow{
+ background-image: url("./Images/qwe.jpg");
+    background-size: cover;
+    /* linear-gradient(rgba(0,0,0,0.25),rgb(0, 0, 0,0.50)) */
+    /* background-position: center; */
+}
