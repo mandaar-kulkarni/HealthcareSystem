@@ -1,3 +1,4 @@
+import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
 import { Doctor } from '../doctor';
 
@@ -8,7 +9,8 @@ import { Doctor } from '../doctor';
 })
 export class DoctorRegistrationComponent {
 
-  doctor=new Doctor("","","",new Date(),"","","","");
+  doctor=new Doctor("","","",new Date(),"","","",0);
+  user=new User("","","DOCTOR");
   confirmPassword:string="";
   degreeCertificate: File | undefined;
   license: File | undefined;
@@ -16,6 +18,7 @@ export class DoctorRegistrationComponent {
 
   ngOnInit(): void {
   }
+
   public onFileChanged(event:any) {
     console.log(event);
     this.degreeCertificate = event.target.files[0];
@@ -35,7 +38,7 @@ export class DoctorRegistrationComponent {
  // }
 
   registerDoctor(){
+    this.user.emailId=this.doctor.emailId;
     console.log(this.doctor);
-  }
-
-}
+    console.log(this.user);
+  }}

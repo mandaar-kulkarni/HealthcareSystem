@@ -30,7 +30,6 @@
             "styles": [
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css"
-
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
@@ -129,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "Registration"
+  "defaultProject": "Registration",
+  "cli": {
+    "analytics": "a5c83864-2aad-48bc-909a-21cd99fa5f64"
+  }
 }
