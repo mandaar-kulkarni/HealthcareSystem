@@ -1,0 +1,81 @@
+
+<body>
+  <div id="allAppointment">
+    <h3 class="jumbotron">List of Appointment</h3>
+    <table class="table table-hover table-striped center" style="margin-left: auto; margin-right: auto;width:1350px">
+      <thead>
+        <tr>
+            <th scope="col">Appointment Time</th>
+            <th scope="col">Patient First Name</th>
+            <th scope="col">Patient Details</th>
+            <th scope="col">Prescription</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr scope="row">
+          <td>Mark</td>
+          <td>Mark</td>
+          <td><a href='#'>Select </a></td>
+          <td><a href='#'>Select </a></td>
+        </tr>
+        <tr scope="row">
+          <td>Jacob</td>
+          <td>Jacob</td>
+          <td><a href='#'>Select </a></td>
+          <td><a href='#'>Select </a></td>
+        </tr>
+        <tr scope="row">
+          <td>Larry</td>
+          <td>Larry</td>
+          <td><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Select </a></td>
+          <td><a href='#'>Select </a></td>
+        </tr>
+      </tbody>
+        <!-- <tr *ngFor="let a of appointment">
+            <td> {{ a.appointmentTime }} </td>
+
+        </tr> -->
+    </table>
+
+    <div id="id01" class="modal">
+
+      <form class="modal-content animate" action="#" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+  </body>

@@ -3,19 +3,17 @@ export class Patient {
   firstName:string;
   lastName:string;
   emailId:string;
-  dateOfBirth:Date;
   phoneNumber:string;
   address:string;
   gender:string;
-  age:number;
+  age:any;
   // password:string;
 
-  constructor(firstName:string,lastName:string,emailId:string,dateOfBirth:Date,
-      phoneNumber:string,address:string,gender:string,age:number,patientId?:number){
+  constructor(firstName:string,lastName:string,emailId:string,
+      phoneNumber:string,address:string,gender:string,age:any,patientId?:number){
           this.firstName=firstName;
           this.lastName=lastName;
           this.emailId=emailId;
-          this.dateOfBirth=dateOfBirth;
           this.phoneNumber=phoneNumber;
           this.address=address;
           this.gender=gender;

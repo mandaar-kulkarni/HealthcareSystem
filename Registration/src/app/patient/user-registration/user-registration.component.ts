@@ -1,6 +1,6 @@
-import { User } from './../user';
+import { User } from '../../user';
 import { Component, OnInit } from '@angular/core';
-import { Patient } from '../patient';
+import { Patient } from '../../patient';
 
 @Component({
   selector: 'app-user-registration',
@@ -8,10 +8,12 @@ import { Patient } from '../patient';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent {
-  patient=new Patient("","","",new Date(),"","","",0);
+  patient=new Patient("","","","","","","");
   user=new User("","","PATIENT");
   confirmPassword:string="";
   password:string="";
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,5 +24,4 @@ export class UserRegistrationComponent {
     console.log(this.patient);
     console.log(this.user);
   }
-
 }

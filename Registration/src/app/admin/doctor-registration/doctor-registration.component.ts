@@ -1,6 +1,6 @@
-import { User } from './../user';
+import { User } from '../../user';
 import { Component, OnInit } from '@angular/core';
-import { Doctor } from '../doctor';
+import { Doctor } from '../../doctor';
 
 @Component({
   selector: 'app-doctor-registration',
@@ -9,7 +9,7 @@ import { Doctor } from '../doctor';
 })
 export class DoctorRegistrationComponent {
 
-  doctor=new Doctor("","","",new Date(),"","","",0);
+  doctor=new Doctor("","","",new Date(),"","","");
   user=new User("","","DOCTOR");
   confirmPassword:string="";
   degreeCertificate: File | undefined;
