@@ -1,39 +1,42 @@
-<div class="container" style=" margin-top: 20px; max-width: 600px;background-color: white;">
-    <h2 class="texual" style="margin-left:150px ;">Add prescription</h2>
+<div class="container element jumbotron" style="width: 700px; height: auto;">
+    <h2 class="texual" class="text" style="text-align: center; padding: 10px;"><strong>Add prescription</strong></h2>
     <!-- <form (ngSubmit)="addMedicine()"> -->
         <div *ngIf="showPrecaution">
             <div class="form-group">
-                <label for="precaution">Precaution</label>
+                <label for="precaution" class="text">Precaution</label>
                 <textarea id="precaution" class="form-control" name="precaution" [(ngModel)]="precaution" rows="4" cols="50"></textarea>
             </div>
+            <hr style="border-top:1px solid rgb(0, 255, 21) ;">
             <div class="form-group">
-                <label for="symptoms">symptoms</label>
+                <label for="symptoms" class="text">Symptoms</label>
                 <textarea id="symptoms" class="form-control" name="symptoms" [(ngModel)]="symptoms" rows="4" cols="50"></textarea>
             </div>
+            <hr style="border-top:1px solid rgb(0, 255, 21) ;">
         </div>
-        <div class="form-group">
-            <label for="mname">Medicine Name</label>
+        <div class="form-group" style="display: inline-block; margin: 5px 15px; ">
+            <label for="mname" class="text" >Medicine Name</label>
             <input type="text" class="form-control" name="mname" [(ngModel)]="medicineName">
         </div>
-        <div class="form-group">
-            <label for="quantity">Medicine Quantity</label>
+        <!-- <hr style="border-top:1px solid rgb(0, 255, 21) ;"> -->
+        <div class="form-group " style="display: inline-block;">
+            <label for="quantity" class="text"> Quantity</label>
             <input type="number" class="form-control" name="quantity" [(ngModel)]="quantity">
         </div>
-        <div>
-        <button style="margin-left:250px ;" (click)="addMedicine()" class="btn btn-secondary">Add More</button>&nbsp;&nbsp;
-    </div>
-        <!-- </form> -->
-    <span>
-    <span>
-            <button class="btn btn-success float-left" (click)="showSymptomsPre()">Add More Precaution</button>
-    </span>
-        <!-- <form (ngSubmit)="savePrescription()">  -->
-        <button (click)="savePrescription()" class="btn btn-success float-right" type="submit">Done</button>
-    <!-- </form> -->
-    </span>
+        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+     <div >
+        <button (click)="addMedicine()" class="btn btn-secondary">Add More</button>&nbsp;&nbsp;
+         <!-- </form> -->
+         <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+         <span>
+         <button class="btn float-left" (click)="showSymptomsPre()">Add More Precaution</button>
+         <!-- <form (ngSubmit)="savePrescription()">  -->
+         <button class="btn float-right" (click)="savePrescription()" type="submit">Done</button>
+         </span>
+      <!-- </form> -->
 
+      </div>
 <div *ngIf="showtable">
-    <table class="table table-hover table-striped center">
+    <table class="table  center text element">
         <thead>
             <tr>
                 <th>Medicine Name</th>

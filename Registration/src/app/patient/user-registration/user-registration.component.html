@@ -1,9 +1,15 @@
-<div class="container" style="max-width: 600px;background-color: white;  margin-top: 8vh;" >
-<h2 class="texual">Patient Registration</h2>
+
+<div class="container element" style="margin-top:20px;" >
+  <br>
+  <br>
+  <h3 class="texual" class="text" style="text-align: center;">Patient Registration</h3>
+  <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+        <h5 style="text-align: center" class="text">Enter Personal Details</h5>
+        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
 <form #Registration="ngForm" (ngSubmit)="registerPatient()">
     <!-- for firstName -->
     <div class="form-group">
-        <label for="firstName">First Name</label>
+        <label for="firstName" class="text"> First Name</label>
         <input type="text" class="form-control" placeholder="First Name" name="firstName" [(ngModel)]="patient.firstName" #firstName="ngModel" required
         [class.is-invalid]="firstName.invalid && firstName.touched">
         <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
@@ -13,7 +19,7 @@
 
     <!-- for lastName -->
     <div class="form-group">
-        <label for="lastName">Last Name</label>
+        <label for="lastName" class="text">Last Name</label>
         <input type="text" class="form-control" placeholder="Last Name" name="lastName" [(ngModel)]="patient.lastName" #lastName="ngModel" required
         [class.is-invalid]="lastName.invalid && lastName.touched">
         <div *ngIf="lastName.errors && (lastName.invalid && lastName.touched)">
@@ -23,9 +29,9 @@
 
     <!-- for gender -->
     <div class="form-group">
-        <div style="display: inline-flex ;margin: 5px;"><label for="gender">Gender &nbsp; &nbsp;  </label></div>
-        <label class="radio-inline"><input type="radio" value="MALE" name="gender" [(ngModel)]="patient.gender" #gender="ngModel" required>Male</label>&nbsp;&nbsp;
-        <label class="radio-inline"><input type="radio" value="FEMALE" name="gender" [(ngModel)]="patient.gender" #gender="ngModel" required>Female</label>
+        <div style="margin: 5px;"><label for="gender" class="text">Gender &nbsp; &nbsp;  </label></div>
+        <label class="radio-inline text"><input type="radio" value="MALE" name="gender" [(ngModel)]="patient.gender" #gender="ngModel" required>Male</label>&nbsp;&nbsp;
+        <label class="radio-inline text"><input type="radio" value="FEMALE" name="gender" [(ngModel)]="patient.gender" #gender="ngModel" required>Female</label>
         <div *ngIf="gender.errors && (gender.invalid && gender.touched)">
             <span class="text-danger" *ngIf="gender.errors?.required">Gender is required</span>
         </div>
@@ -34,7 +40,7 @@
         <!-- for age -->
         <div style="display: inline-flexbox;">
     <div class="form-group">
-        <label for="age">Age</label>
+        <label for="age" class="text">Age</label>
         <input type="number" class="form-control" placeholder="Age" name="age" [(ngModel)]="patient.age" #age="ngModel" required
         [class.is-invalid]="age.invalid && age.touched">
         <div *ngIf="age.errors && (age.invalid && age.touched)">
@@ -46,41 +52,38 @@
 
      <!-- for address -->
      <div class="form-group">
-        <label for="address">Address</label>
+        <label for="address" class="text">Address</label>
         <input type="textarea" class="form-control" placeholder="Address" name="address" [(ngModel)]="patient.address" #address="ngModel" required maxlength="50"
         [class.is-invalid]="address.invalid && address.touched">
         <div *ngIf="address.errors && (address.invalid && address.touched)">
-            <span class="text-danger" *ngIf="address.errors.required">Address is required</span>
+            <span class="text-danger" *ngIf="address.errors.required">Address required</span>
             <span class="text-danger" *ngIf="address.errors.maxlength">Address length should be less than 50 </span>
         </div>
     </div>
 
         <!-- for phone number -->
         <div class="form-group">
-          <label for="phoneNumber">Mobile Number</label>
+          <label for="phoneNumber" class="text">Mobile Number</label>
           <input type="text" class="form-control" placeholder="10 Digits" name="phoneNumber" [(ngModel)]="patient.phoneNumber" #phoneNumber="ngModel" required pattern="^((\\+91-?)|0)?[0-9]{10}$"
           [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
           <div *ngIf="phoneNumber.errors && (phoneNumber.invalid && phoneNumber.touched)">
-              <span class="text-danger" *ngIf="phoneNumber.errors.required">phoneNumber is required</span>
-              <span class="text-danger" *ngIf="phoneNumber.errors.pattern">Phone number length should be 10 </span>
+              <span class="text-danger" *ngIf="phoneNumber.errors.required">Phone Number required</span>
+              <span class="text-danger" *ngIf="phoneNumber.errors.pattern">10 Digits</span>
           </div>
       </div>
 
-      <br>
-      <hr>
-      <h5>Please Enter Login Credentials</h5>
-      <hr>
-      <br>
-
+      <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+      <h5 style="text-align: center" class="text">Please Enter Login Credentials</h5>
+      <hr style="border-top:1px solid rgb(0, 255, 21) ;">
 
     <!-- for email-id --> <!-- pattern="/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/" -->
-   <div class="form-group">
-        <label for="emailId">Email ID</label>
+   <div class="form-group input-group">
+        <span class="input-group-text" id="basic-addon1">@</span>
         <input type="text" class="form-control" placeholder="Email ID" name="emailId" [(ngModel)]="patient.emailId" #emailId="ngModel" required
         [class.is-invalid]="emailId.invalid && emailId.touched">
         <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
-            <span class="text-danger" *ngIf="emailId.errors.required">EmailId is required</span>
-            <span class="text-danger" *ngIf="emailId.errors.pattern">Enter valid email-Id</span> -->
+            <span class="text-danger" *ngIf="emailId.errors.required">Email ID required</span>
+            <span class="text-danger" *ngIf="emailId.errors.pattern">Enter valid Email ID</span> -->
          </div>
     </div>
     <!-- <div class="form-group">
@@ -91,11 +94,11 @@
 
   </div> -->
 
-
     <!-- for password -->
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" placeholder="password" name="password" [(ngModel)]="user.password" #password="ngModel" required
+    <div class="form-group input-group">
+        <!-- <label for="password">Password</label> -->
+        <span class="input-group-text" id="basic-addon1"><img src="https://www.pinclipart.com/picdir/big/130-1303682_security-password-2-icon-password-icon-in-png.png" width="15px" height="17px" ></span>
+        <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" #password="ngModel" required
         [class.is-invalid]="password.invalid && password.touched">
         <div *ngIf="password.errors && (password.invalid && password.touched)">
             <span class="text-danger" *ngIf="password.errors.required">password is required</span>
@@ -104,14 +107,15 @@
     </div>
 
     <!-- for confirm password -->
-    <div class="form-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" class="form-control" placeholder="confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" #cpass="ngModel" required pattern="{{user.password}}"
+    <div class="form-group input-group">
+            <!-- <label for="confirmPassword">Confirm Password</label> -->
+            <span class="input-group-text" id="basic-addon1"><img src="https://www.pinclipart.com/picdir/big/130-1303682_security-password-2-icon-password-icon-in-png.png" width="15px" height="17px" ></span>
+            <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="confirmPassword" #cpass="ngModel" required pattern="{{user.password}}"
             [class.is-invalid]="password.invalid && password.touched">
-            <span class="text-danger" *ngIf="cpass.errors?.pattern">password and Confirm password doesnot match</span>
+            <span class="text-danger" *ngIf="cpass.errors?.pattern">Passwords does not match</span>
         </div>
 
 
-    <div>
-        <button [disabled]="Registration.form.invalid" type="submit" class="btn btn-success">Register</button>
+    <div style="margin-bottom: 10px; padding-bottom: 10px;">
+        <button [disabled]="Registration.form.invalid" type="submit" class="btn btn-secondary" style="border: 2px solid rgb(0,255,21); color: white;">Register</button>
     </div>

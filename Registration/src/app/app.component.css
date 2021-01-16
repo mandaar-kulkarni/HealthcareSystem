@@ -1,0 +1,11 @@
+.nav-link{
+  color: rgb(13, 253, 33);
+}
+
+.nav-link:hover{
+  border: solid 1px rgb(0, 255, 21);
+  border-radius: 5px;
+}
+.navbar-brand{
+  border: solid 2px  rgb(0, 255, 21);
+}

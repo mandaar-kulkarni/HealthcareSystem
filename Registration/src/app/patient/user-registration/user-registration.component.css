@@ -1,0 +1,33 @@
+.text{
+  color: white;
+}
+.btn{
+  color: rgb(0, 255, 21);
+  border:1px solid white;
+  background-color: transparent;
+}
+.btn-secondary{
+
+  color: white;
+  border: 1px solid  rgb(0, 255, 21) ;
+}
+
+.btn:hover{
+  color: white;
+  border: 1px solid  rgb(0, 255, 21) ;
+
+}
+.btn-secondary:hover{
+  color: rgb(0, 255, 21);
+  border:1px solid white;
+  background-color: transparent;
+}
+
+.element{
+  max-width: 600px;
+  background-color:rgba(0,0,0, 0.85);
+  margin-top: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
