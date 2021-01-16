@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { PrescriptionComponent } from './doctor/prescription/prescription.component';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DoctorRegistrationComponent } from './admin/doctor-registration/doctor-registration.component';
 import { ListOfDoctorsComponent } from './admin/list-of-doctors/list-of-doctors.component';
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'register',component:UserRegistrationComponent},
   {path:'service',component:DoctorRegistrationComponent},
   {path:'listofdoctor',component:ListOfDoctorsComponent},
-  {path:'listofappointment',component:ListOfAppointmentComponent}
+  {path:'listofappointment',component:ListOfAppointmentComponent},
+  {path:'prescription',component:PrescriptionComponent}
 ];
 
 @NgModule({

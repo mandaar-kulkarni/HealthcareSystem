@@ -1,3 +1,5 @@
+import { DoctorModule } from './doctor/doctor.module';
+import { PrescriptionComponent } from './doctor/prescription/prescription.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +25,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    DoctorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,56 @@
+<div class="container" style=" margin-top: 20px; max-width: 600px;background-color: white;">
+    <h2 class="texual" style="margin-left:150px ;">Add prescription</h2>
+    <!-- <form (ngSubmit)="addMedicine()"> -->
+        <div *ngIf="showPrecaution">
+            <div class="form-group">
+                <label for="precaution">Precaution</label>
+                <textarea id="precaution" class="form-control" name="precaution" [(ngModel)]="precaution" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="symptoms">symptoms</label>
+                <textarea id="symptoms" class="form-control" name="symptoms" [(ngModel)]="symptoms" rows="4" cols="50"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mname">Medicine Name</label>
+            <input type="text" class="form-control" name="mname" [(ngModel)]="medicineName">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Medicine Quantity</label>
+            <input type="number" class="form-control" name="quantity" [(ngModel)]="quantity">
+        </div>
+        <div>
+        <button style="margin-left:250px ;" (click)="addMedicine()" class="btn btn-secondary">Add More</button>&nbsp;&nbsp;
+    </div>
+        <!-- </form> -->
+    <span>
+    <span>
+            <button class="btn btn-success float-left" (click)="showSymptomsPre()">Add More Precaution</button>
+    </span>
+        <!-- <form (ngSubmit)="savePrescription()">  -->
+        <button (click)="savePrescription()" class="btn btn-success float-right" type="submit">Done</button>
+    <!-- </form> -->
+    </span>
+
+<div *ngIf="showtable">
+    <table class="table table-hover table-striped center">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let medicine of listOfMedicine;let i=index;">
+                <td>{{medicine.medicineName}}</td>
+                <td>{{medicine.quantity}}</td>
+                <td><button class="btn btn-warning" (click)="update(medicine,i)">Update</button></td>
+                <td><button class="btn btn-danger" (click)="deleteRow(i)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</div>
