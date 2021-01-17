@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EmergencyComponent } from './emergency/emergency.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [EmergencyComponent],
   imports: [
     CommonModule
   ]
