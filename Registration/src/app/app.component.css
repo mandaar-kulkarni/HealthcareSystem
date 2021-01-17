@@ -9,3 +9,14 @@
 .navbar-brand{
   border: solid 2px  rgb(0, 255, 21);
 }
+
+.stayfit{
+  background-color: rgb(0, 255, 21);
+  color: black;
+}
+
+.stayfit:hover{
+  color: rgb(0, 255, 21);
+  background-color: black;
+
+}

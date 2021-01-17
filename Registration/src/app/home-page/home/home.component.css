@@ -1,4 +1,87 @@
-img{
-  width: 1120px;
-  height: 630px;
+.tr{
+  color: rgb(0, 255, 21) ;
 }
+.text{
+  color: white;
+}
+.btn{
+  color: rgb(0, 255, 21);
+  border:1px solid white;
+  background-color: transparent;
+}
+.btn-secondary{
+
+  color: white;
+  border: 1px solid  rgb(0, 255, 21) ;
+}
+
+.btn:hover{
+  color: white;
+  border: 1px solid  rgb(0, 255, 21) ;
+
+}
+.btn-secondary:hover{
+  color: rgb(0, 255, 21);
+  border:1px solid white;
+  background-color: transparent;
+}
+
+.element{
+  /* width: 450px; */
+  background-color:rgba(0,0,0, 0.85);
+  margin-top: 20px;
+  border: 2px solid white;
+}
+
+.table-hover{
+  color: white;
+  border:1px solid white;
+}
+
+tr:hover{
+  color: rgb(0, 255, 21) ;
+}
+
+.jumbotron{
+  border:2px solid white;
+  padding: 48px;
+  text-align: center;
+}
+
+.table,td,tr,th{
+  text-align: center;
+
+  border: 1px solid white;
+}
+
+a{
+  color: white;
+  text-decoration: underline;
+}
+a:hover{
+  color:rgb(0, 255, 21);
+  text-decoration:double;
+}
+
+.btn-success{
+  margin: 10px;
+  padding: 10px;
+}
+
+.card-body{
+  background-color: transparent;
+  color: white;
+  padding: 10px;
+}
+
+.card{
+  padding: 20px;
+  background-color:transparent;
+  transition: width 2s, height 4s;
+}
+/*
+.card:hover{
+  transform: scale(1.1);
+  border: 2px solid rgb(0, 255, 21);
+
+} */
