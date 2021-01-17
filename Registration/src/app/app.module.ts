@@ -10,6 +10,7 @@ import { DoctorRegistrationComponent } from './admin/doctor-registration/doctor-
 import { UserRegistrationComponent } from './patient/user-registration/user-registration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { InvoiceComponent } from './patient/invoice/invoice.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     // RegisterComponent,
     DoctorRegistrationComponent,
     UserRegistrationComponent,
-    HomeComponent
+    HomeComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
