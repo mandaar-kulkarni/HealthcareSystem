@@ -20,3 +20,8 @@
   background-color: black;
 
 }
+.emergency{
+  color: black;
+  background-color: rgb(255,0,21);
+  border-radius: 5px;
+}

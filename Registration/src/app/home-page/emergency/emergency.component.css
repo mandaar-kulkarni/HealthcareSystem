@@ -14,11 +14,11 @@ input[type=text], input[type=password] {
 button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 20px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 60%;
 }
 
 button:hover {
@@ -70,10 +70,11 @@ span.psw {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(0,0,0,0.9);
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
+  border: 2px solid red;
   width: 80%; /* Could be more or less, depending on screen size */
+  color: red;
 }
 
 /* The Close Button (x) */
@@ -99,12 +100,12 @@ span.psw {
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
+  from {-webkit-transform: scale(0)}
   to {-webkit-transform: scale(1)}
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
+  from {transform: scale(0)}
   to {transform: scale(1)}
 }
 
@@ -117,4 +118,10 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+
+.text{
+  color: red;
+  font-weight: bold;
+
 }

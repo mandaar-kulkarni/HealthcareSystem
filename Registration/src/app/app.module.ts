@@ -11,12 +11,13 @@ import { UserRegistrationComponent } from './patient/user-registration/user-regi
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { InvoiceComponent } from './patient/invoice/invoice.component';
+import { EmergencyComponent } from './home-page/emergency/emergency.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    // RegisterComponent,
+    EmergencyComponent,
     DoctorRegistrationComponent,
     UserRegistrationComponent,
     HomeComponent,

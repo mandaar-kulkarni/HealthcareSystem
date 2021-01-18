@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 40px;">
+  <div class="jumbotron element text">
+    <h3><strong>Invoice</strong></h3>
+    <br>
+    <hr style="border-top: 1px solid rgb(0,255,21);">
+    <h5 style="text-align: left;">Patient Name: John Smith</h5>
+    <hr style="border-top: 1px solid rgb(0,255,21);">
+    <table class="table center text element" >
+      <thead>
+        <tr style="color: rgb(0,255,21);">
+            <th scope="col">Doctor Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Created On</th>
+        </tr>
+      </thead>
+        <tbody>
+          <td> Dr. Mark Otto</td>
+          <td [(ngModel)]="inv.totalAmount">  </td>
+          <td [(ngModel)]="inv.createdOn"> </td>
+        </tbody>
+      </table>
+    </div>
+</div>
