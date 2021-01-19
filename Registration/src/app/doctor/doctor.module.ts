@@ -6,6 +6,7 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { RouterModule } from '@angular/router';
 
 
+
 @NgModule({
   declarations: [
     ListOfAppointmentComponent,

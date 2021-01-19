@@ -8,9 +8,8 @@ import { Patient } from 'src/app/patient';
 })
 export class AppointmentListComponent implements OnInit {
 
-  patient=new Patient("","","","","","","");
   constructor() { }
-
+  patient=new Patient("","","","","","","");
   ngOnInit(): void {
   }
 
