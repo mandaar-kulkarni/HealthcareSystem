@@ -4,18 +4,18 @@
         <div *ngIf="showPrecaution">
             <div class="form-group">
                 <label for="precaution" class="text">Precaution</label>
-                <textarea id="precaution" class="form-control" name="precaution" [(ngModel)]="precaution" rows="4" cols="50"></textarea>
+                <textarea id="precaution" class="form-control" name="precaution" [(ngModel)]="precaution" rows="4" cols="50" maxlength="100"></textarea>
             </div>
             <hr style="border-top:1px solid rgb(0, 255, 21) ;">
             <div class="form-group">
                 <label for="symptoms" class="text">Symptoms</label>
-                <textarea id="symptoms" class="form-control" name="symptoms" [(ngModel)]="symptoms" rows="4" cols="50"></textarea>
+                <textarea id="symptoms" class="form-control" name="symptoms" [(ngModel)]="symptoms" rows="4" cols="50" maxlength="100"></textarea>
             </div>
             <hr style="border-top:1px solid rgb(0, 255, 21) ;">
         </div>
         <div class="form-group" style="display: inline-block; margin: 5px 15px; ">
             <label for="mname" class="text" >Medicine Name</label>
-            <input type="text" class="form-control" name="mname" [(ngModel)]="medicineName">
+            <input type="text" class="form-control" name="mname" [(ngModel)]="medicineName" maxlength="50">
         </div>
         <!-- <hr style="border-top:1px solid rgb(0, 255, 21) ;"> -->
         <div class="form-group " style="display: inline-block;">

@@ -83,8 +83,17 @@
         [class.is-invalid]="emailId.invalid && emailId.touched">
         <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
             <span class="text-danger" *ngIf="emailId.errors.required">Email ID required</span>
-            <span class="text-danger" *ngIf="emailId.errors.pattern">Enter valid Email ID</span> -->
-         </div>
+            <span class="text-danger" *ngIf="emailId.errors.pattern">Enter valid Email ID</span>
+        </div>
+<!-- =======
+   <div class="form-group">
+        <label for="emailId">Email ID</label>
+        <input type="text" class="form-control" placeholder="Email ID" name="emailId" [(ngModel)]="patient.emailId" #emailId="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+        [class.is-invalid]="emailId.invalid && emailId.touched">
+        <div *ngIf="(emailId.invalid && emailId.touched)">
+            <span class="text-danger" *ngIf="emailId?.errors.required">EmailId is required</span>
+            <span class="text-danger" *ngIf="emailId?.errors.pattern">Enter valid email-Id</span>
+         </div> -->
     </div>
     <!-- <div class="form-group">
       <label for="emailId">Email ID</label>

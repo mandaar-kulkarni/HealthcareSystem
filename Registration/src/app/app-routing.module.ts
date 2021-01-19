@@ -6,7 +6,7 @@ import { ListOfDoctorsComponent } from './admin/list-of-doctors/list-of-doctors.
 import { ListOfAppointmentComponent } from './doctor/list-of-appointment/list-of-appointment.component';
 import { HomeComponent } from './home-page/home/home.component';
 import { LoginComponent } from './home-page/login/login.component';
-// import { RegisterComponent } from './register/register.component';
+import { AppointmentListComponent } from './patient/appointment-list/appointment-list.component';
 import { UserRegistrationComponent } from './patient/user-registration/user-registration.component';
 import { InvoiceComponent } from './patient/invoice/invoice.component';
 import { EmergencyComponent } from './home-page/emergency/emergency.component';
@@ -20,7 +20,9 @@ const routes: Routes = [
   {path:'listofappointment',component:ListOfAppointmentComponent},
   {path:'prescription',component:PrescriptionComponent},
   {path:'invoice',component:InvoiceComponent},
-  {path: 'emergency',component:EmergencyComponent}
+  {path: 'emergency',component:EmergencyComponent},
+  {path:'appointmentlist',component:AppointmentListComponent}
+
 ];
 
 @NgModule({
