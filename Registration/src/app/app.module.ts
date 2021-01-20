@@ -15,6 +15,7 @@ import { EmergencyComponent } from './home-page/emergency/emergency.component';
 import { AdminModule } from './admin/admin.module';
 import { HomePageModule } from './home-page/home-page.module';
 import { PatientModule } from './patient/patient.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PatientModule } from './patient/patient.module';
     DoctorModule,
     AdminModule,
     HomePageModule,
-    PatientModule
+    PatientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

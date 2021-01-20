@@ -4,11 +4,12 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @Entity
 @Table(name = "appointments")
+@JsonInclude(Include.NON_NULL)
 public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +22,6 @@ public class Appointment {
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 
-	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
@@ -29,6 +29,15 @@ public class Appointment {
 	public Appointment() {
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public Appointment(Integer appointmentId, LocalDate appointmentTime, Patient patient) {
+		super();
+		this.appointmentId = appointmentId;
+		this.appointmentTime = appointmentTime;
+		this.patient = patient;
+	}
+
 
 	public Appointment(Integer appointmentId, LocalDate appointmentTime) {
 		super();
@@ -60,7 +69,6 @@ public class Appointment {
 		this.doctor = doctor;
 	}
 
-	@JsonProperty
 	public Patient getPatient() {
 		return patient;
 	}
