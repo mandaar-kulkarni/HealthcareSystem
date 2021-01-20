@@ -10,6 +10,7 @@ import { UserRegistrationComponent } from './patient/user-registration/user-regi
 import { InvoiceComponent } from './patient/invoice/invoice.component';
 import { EmergencyComponent } from './home-page/emergency/emergency.component';
 import { AppointmentListComponent } from './patient/appointment-list/appointment-list.component';
+import { BookingAppointmentComponent } from './patient/booking-appointment/booking-appointment.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -21,8 +22,8 @@ const routes: Routes = [
   {path:'prescription',component:PrescriptionComponent},
   {path:'invoice',component:InvoiceComponent},
   {path: 'emergency',component:EmergencyComponent},
-  {path: 'appointmentlist',component:AppointmentListComponent}
-
+  {path: 'appointmentlist',component:AppointmentListComponent},
+  {path: 'appointmentbooking',component:BookingAppointmentComponent}
 ];
 
 @NgModule({
