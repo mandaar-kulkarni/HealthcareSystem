@@ -1,32 +1,40 @@
-
-
 <div class="container card element">
-<form #Registration="ngForm" (ngSubmit)="userLogin()">
-  <h2 class="text-danger">{{message}}</h2>
-  <br>
-        <h4 style="text-align: center;" class="text">Login to StayFit</h4>
+  <form #Registration="ngForm" (ngSubmit)="userLogin()">
+    <h2 class="text-danger">{{message}}</h2>
+    <br>
+    <h4 style="text-align: center;" class="text">Login to StayFit</h4>
     <hr style="border-top:1px solid rgb(0, 255, 21) ;">
 
-  <div class="form-group" style="margin: 10px;">
-    <label for="email" class="text" >Email ID</label>
-    <div class="input-group">
-      <span class="input-group-text" id="basic-addon1">@</span>
-      <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" [(ngModel)]="user.emailId" #emailId="ngModel">
-    </div>
-    <!-- <span *ngIf="email.invalid && email.touched" class="error">email is required</span> -->
-  </div>
-  <div class="form-group" style="margin: 10px;">
-    <label for="pwd" class="text">Password</label>
-    <div class="input-group">
-      <span class="input-group-text" id="basic-addon1"><img src="https://www.pinclipart.com/picdir/big/130-1303682_security-password-2-icon-password-icon-in-png.png" width="15px" height="17px" ></span>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="user.password" #password="ngModel">
-     </div>
-  </div>
-<fieldset>
-<button type="submit" [disabled]="Registration.form.invalid" class="btn btn-primary " style="background-color:rgb(0, 0, 0);">Submit</button>
-<button type="register" style="float: right; margin-bottom: 15px;" class="btn btn-secondary" [routerLink]="['/register']">Register</button>
+    <div class="form-group" style="margin: 10px;">
+      <label for="email" class="text">Email ID</label>
+      <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Email ID" name="emailId" [(ngModel)]="user.emailId"
+          #emailId="ngModel" required [class.is-invalid]="emailId.invalid && emailId.touched"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <div *ngIf="emailId.errors && (emailId.invalid && emailId.touched)">
+          <span class="text-danger" *ngIf="emailId.errors.required">Email ID required</span>
+          <span class="text-danger" *ngIf="emailId.errors.pattern">Enter valid Email ID</span>
+        </div>
+        <!-- <span *ngIf="email.invalid && email.touched" class="error">email is required</span> -->
+      </div>
+      <div class="form-group" style="margin: 10px;">
+        <label for="pwd" class="text">Password</label>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img
+              src="https://www.pinclipart.com/picdir/big/130-1303682_security-password-2-icon-password-icon-in-png.png"
+              width="15px" height="17px"></span>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+            [(ngModel)]="user.password" #password="ngModel">
+        </div>
+      </div>
+      <fieldset>
+        <button type="submit" [disabled]="Registration.form.invalid" class="btn btn-primary "
+          style="background-color:rgb(0, 0, 0);">Submit</button>
+        <button type="register" style="float: right; margin-bottom: 15px;" class="btn btn-secondary"
+          [routerLink]="['/register']">Register</button>
 
-</fieldset>
-</form>
-</div>
-
+        </fieldset>
+      </div>
+  </form>
+</div>>

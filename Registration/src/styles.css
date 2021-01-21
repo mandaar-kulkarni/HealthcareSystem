@@ -1,7 +1,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 .mainWindow{
- background-image:  url("./Images/456.gif");
+ background-image: linear-gradient(rgba(0,0,0,.1),rgb(0,0,0,0.1)), url("./Images/main.gif");
     background-size: 100%;
     /* linear-gradient(rgba(255,255,255,.9),rgb(255, 255, 255,0.9)), */
 }

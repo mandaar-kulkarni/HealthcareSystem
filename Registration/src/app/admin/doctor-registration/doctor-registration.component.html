@@ -1,9 +1,9 @@
 <div class="container element">
         <br>
   <h3 class="texual" class="text" style="text-align: center;">Doctor Registration</h3>
-  <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+  <hr style="border-top:3px solid red ;">
         <h5 class="text" style="text-align: center">Enter Personal Details</h5>
-        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+        <hr style="border-top:3px solid red ;">
   <form #Registration="ngForm" (ngSubmit)="registerDoctor()">
       <!-- for firstName -->
       <div class="form-group">
@@ -68,9 +68,9 @@
         </div>
     </div>
 
-    <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+    <hr style="border-top:3px solid red ;">
     <h5 style="text-align: center" class="text">Please Enter Login Credentials</h5>
-    <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+    <hr style="border-top:3px solid red ;">
 
       <!-- for email-id --> <!-- pattern="/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/" -->
       <div class="form-group input-group">
@@ -103,9 +103,9 @@
             <span class="text-danger" *ngIf="cpass?.errors?.pattern">Passwords does not match !</span>
         </div>
 
-        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+        <hr style="border-top:3px solid red ;">
         <h5 style="text-align: center" class="text">Enter Practice Details</h5>
-        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+        <hr style="border-top:3px solid red ;">
 
       <div class="form-group">
               <label for="degreeCertificate" class="text">Degree Certificate</label><br>

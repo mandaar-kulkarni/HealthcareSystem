@@ -1,47 +1,47 @@
 .tr{
-  color: rgb(0, 255, 21) ;
+  color: red ;
 }
 
 
 .text{
-  color: white;
+  color:black;
+  font-weight: bold;
 }
 .btn{
-  color: rgb(0, 255, 21);
-  border:1px solid white;
+  color: red;
+  border:2px solid black;
   background-color: transparent;
 }
 .btn-secondary{
 
-  color: white;
-  border: 1px solid  rgb(0, 255, 21) ;
+  color:red;
+  border: 2px solid black ;
 }
 
 .btn:hover{
-  color: white;
-  border: 1px solid  rgb(0, 255, 21) ;
+  color: red;
+  border: 2px solid  red;
 
 }
 .btn-secondary:hover{
-  color: rgb(0, 255, 21);
-  border:1px solid white;
-  background-color: transparent;
+  olor: red;
+  border: 2px solid  red ;
 }
 
 .element{
   /* width: 450px; */
-  background-color:rgba(0,0,0, 0.85);
+  background-color:rgba(255,255,255, 0.9);
   margin-top: 20px;
   border: 2px solid white;
 }
 
 .table-hover{
-  color: white;
-  border:1px solid white;
+  color:black;
+  border:2px solid black;
 }
 
 tr:hover{
-  color: rgb(0, 255, 21) ;
+  color: red ;
 }
 
 .jumbotron{
@@ -53,7 +53,7 @@ tr:hover{
 .table,td,tr,th{
   text-align: center;
 
-  border: 1px solid white;
+  border: 2px solid black;
 }
 
 a{
@@ -61,7 +61,7 @@ a{
   text-decoration: underline;
 }
 a:hover{
-  color:rgb(0, 255, 21);
+  color:red;
   text-decoration:double;
 }
 

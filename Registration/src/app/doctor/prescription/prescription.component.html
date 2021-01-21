@@ -6,27 +6,27 @@
                 <label for="precaution" class="text">Precaution</label>
                 <textarea id="precaution" class="form-control" name="precaution" [(ngModel)]="precaution" rows="4" cols="50"></textarea>
             </div>
-            <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+            <hr style="border-top:3px solid red ;">
             <div class="form-group">
                 <label for="symptoms" class="text">Symptoms</label>
                 <textarea id="symptoms" class="form-control" name="symptoms" [(ngModel)]="symptoms" rows="4" cols="50"></textarea>
             </div>
-            <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+            <hr style="border-top:3px solid red ;">
         </div>
         <div class="form-group" style="display: inline-block; margin: 5px 15px; ">
             <label for="mname" class="text" >Medicine Name</label>
             <input type="text" class="form-control" name="mname" [(ngModel)]="medicineName">
         </div>
-        <!-- <hr style="border-top:1px solid rgb(0, 255, 21) ;"> -->
+        <!-- <hr style="border-top:3px solid red ;"> -->
         <div class="form-group " style="display: inline-block;">
             <label for="quantity" class="text"> Quantity</label>
             <input type="number" class="form-control" name="quantity" [(ngModel)]="quantity">
         </div>
-        <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+        <hr style="border-top:3px solid red ;">
      <div >
         <button (click)="addMedicine()" class="btn btn-secondary">Add More</button>&nbsp;&nbsp;
          <!-- </form> -->
-         <hr style="border-top:1px solid rgb(0, 255, 21) ;">
+         <hr style="border-top:3px solid red ;">
          <span>
          <button class="btn float-left" (click)="showSymptomsPre()">Add More Precaution</button>
          <!-- <form (ngSubmit)="savePrescription()">  -->
@@ -36,6 +36,9 @@
 
       </div>
 <div *ngIf="showtable">
+
+<br>
+<br>
     <table class="table  center text element">
         <thead>
             <tr>

@@ -1,31 +1,32 @@
 .text{
-  color: white;
+  color:black;
+font-weight: bold;
 }
 .btn{
-  color: rgb(0, 255, 21);
+  color: red;
   border:1px solid white;
   background-color: transparent;
 }
 .btn-secondary{
 
   color: white;
-  border: 1px solid  rgb(0, 255, 21) ;
+  border: 1px solid  red ;
 }
 
 .btn:hover{
   color: white;
-  border: 1px solid  rgb(0, 255, 21) ;
+  border: 1px solid  red ;
 
 }
 .btn-secondary:hover{
-  color: rgb(0, 255, 21);
+  color: red;
   border:1px solid white;
   background-color: transparent;
 }
 
 .element{
   max-width: 600px;
-  background-color:rgba(0,0,0, 0.9);
+  background-color:rgba(255,255,255, 0.9  );
   margin-top: 20px;
   border: 2px solid white;
   padding: 20px;
