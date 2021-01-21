@@ -36,64 +36,14 @@
       <li class="nav-item">
         <a class="nav-link" href="/appointmentbooking">appointment Booking</a>
       </li>
-      <li>
-        <button onclick="document.getElementById('id01').style.display='block'" >Emergency</button>
-      </li>
 
-
-<div id="id01" class="modal" >
-    <form class="modal-content animate" #Registration="ngForm" (ngSubmit)="saveDetails()">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-    <p class="text-success">{{message}}</p>
-      <div class="element">
-        <div class="form-group">
-            <label class="text" for="firstName">Name</label>
-            <input type="text" class="form-control text" placeholder="Enter Name" name="firstName" [(ngModel)]="emergency.name" #firstName="ngModel" required
-            [class.is-invalid]="firstName.invalid && firstName.touched">
-            <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
-                <span class="text-danger" *ngIf="firstName.errors.required">Name is required</span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="text" for="phoneNumber">Phone Number</label>
-            <input type="text" class="form-control text" placeholder="phoneNumber " name="phoneNumber" [(ngModel)]="emergency.phoneNumber" #phoneNumber="ngModel" required pattern="^((\\+91-?)|0)?[0-9]{10}$"
-            [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
-            <div *ngIf="phoneNumber.errors && (phoneNumber.invalid && phoneNumber.touched)">
-                <span class="text-danger" *ngIf="phoneNumber.errors.required">phoneNumber is required</span>
-                <span class="text-danger" *ngIf="phoneNumber.errors.pattern">Phone number length should be 10 </span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="text" for="address">Symptoms</label>
-            <input type="textarea" class="form-control" placeholder="address " name="address" [(ngModel)]="emergency.symptoms" #address="ngModel" required maxlength="50"
-            [class.is-invalid]="address.invalid && address.touched">
-            <div *ngIf="address.errors && (address.invalid && address.touched)">
-                <span class="text-danger" *ngIf="address.errors.required">Address is required</span>
-                <span class="text-danger" *ngIf="address.errors.maxlength">Address length should be less than 50 </span>
-            </div>
-        </div>
-
-
-      <button type="submit" [disabled]="Registration.form.invalid" >Book An Ambulance</button>
-    </div>
-
-    <!-- <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'"  class="cancelbtn">Cancel</button>
-    </div> -->
-    <!-- </div> -->
-  </form>
-</div>
-      <!-- <div style="padding-left: 155px;">
+      <div style="padding-left: 155px;">
       <li class="nav-item emergency" style="margin-left: 50px;">
-        <button onclick="/emergency/document.getElementById('id01').style.display='block'" style="width:auto;">Emergency</button>
+        <!-- <button onclick="/emergency/document.getElementById('id01').style.display='block'" style="width:auto;">Emergency</button> -->
         <a class="nav-link" style="color: black;" href="/emergency"><strong>EMERGENCY</strong></a>
-        style="padding-left: 100px;
+        <!-- style="padding-left: 100px; -->
       </li>
-      </div> -->
+      </div>
     </ul>
   </div>
 </nav>

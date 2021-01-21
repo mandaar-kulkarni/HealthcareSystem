@@ -1,6 +1,7 @@
 <div class="container" style="margin-top: 40px;">
-  <div id="allAppointment">
+  <div id="allAppointment" *ngIf="showTable">
     <h3 class="jumbotron element text"><strong>Scheduled Appoitments</strong></h3>
+    <h2 class="text-danger" style="margin: auto;">{{ message }}</h2>
     <table class="table center text element">
       <thead>
         <tr style="color: rgb(0,255,21);">
@@ -12,27 +13,38 @@
       </thead>
 
       <tbody>
-        <tr scope="row">
-          <td>Mark</td>
-          <td>9AM</td>
-          <td><a href='#'>Select </a></td>
-          <td><a href='#'>Select </a></td>
-        </tr>
-        <tr scope="row">
-          <td>Jacob</td>
-          <td>10AM</td>
-          <td><a href='#'>Select </a></td>
-          <td><a href='#'>Select </a></td>
-        </tr>
-        <tr scope="row">
-          <td>Larry</td>
-          <td>12AM</td>
-          <td><a style="width:auto;">Select </a></td>
-          <td><a href='#'>Select </a></td>
+        <tr *ngFor="let a of appointment">
+          <td> {{ a.doctor?.firstName }} </td>
+          <td>{{ a.appointmentTime }}</td>
+          <td><button class="btn btn-warning" (click)="getPrescription()">Get Prescription</button></td> 
+          <td><button class="btn btn-warning" (click)="getInvoice()">Get Invoice</button></td>
         </tr>
       </tbody>
-        <!-- <tr *ngFor="let a of appointment">
-            <td> {{ a.appointmentTime }} </td>
-
-        </tr> -->
     </table>
+  </div>
+
+  <div id="allPrescription" *ngIf="showPrescription">
+    <h3 class="jumbotron element text"><strong>Prescription</strong></h3>
+    <h2 class="text-danger" style="margin: auto;">{{ message }}</h2>
+    <button class="btn btn-success" (click)="gotoAppointmentList()">Go To Previous page</button>
+    <table class="table center text element">
+      <thead>
+        <tr style="color: rgb(0,255,21);">
+            <th scope="col">Medicine Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Precaution</th>
+            <th scope="col">Symptoms</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let med of medPrescription">
+          <td> {{ med.medicineName }} </td>
+          <td>{{ med.quantity }}</td>
+          <td> {{ med.prescriptionId?.precautions }}</td>
+          <td> {{ med.prescriptionId?.symptoms }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -21,6 +21,7 @@ export class LoginComponent{
       if(response.role=="ADMIN"){
         this.router.navigate(['listofdoctor']);
       }else if(response.role=="PATIENT"){
+        sessionStorage.setItem("patient",JSON.stringify(response.patient));
         this.router.navigate(['appointmentlist']);
       }else if(response.role=="DOCTOR"){
         this.router.navigate(['listofappointment']);
