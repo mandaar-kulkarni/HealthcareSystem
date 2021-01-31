@@ -1,6 +1,9 @@
 import { User } from '../../user';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Doctor } from '../../doctor';
+import { Router } from '@angular/router';
+import { TrailDoctor } from 'src/app/dto/TrailDoctor';
+import { AdminService } from 'src/app/admin.service';
 
 @Component({
   selector: 'app-doctor-registration',
@@ -12,11 +15,29 @@ export class DoctorRegistrationComponent {
   doctor=new Doctor("","","",new Date(),"","","");
   user=new User("","","DOCTOR");
   confirmPassword:string="";
+  message:string=""
   degreeCertificate: File | undefined;
   license: File | undefined;
-  constructor() { }
+
+  constructor(private service:AdminService,private router:Router) { }
 
   ngOnInit(): void {
+  }
+
+  registerDoctor(){
+    this.user.emailId=this.doctor.emailId;
+    console.log(this.doctor);
+    console.log(this.user);
+    this.service.registerDoctor(new TrailDoctor(this.doctor,this.user))
+    .subscribe(
+      (response)=>{
+        console.log(response);
+      this.router.navigate(['listofdoctor']);
+    }
+    ,(error)=>{
+      console.log(error);
+      this.message=error.error.message;
+    });
   }
 
   public onFileChanged(event:any) {
@@ -37,8 +58,4 @@ export class DoctorRegistrationComponent {
     // );
  // }
 
-  registerDoctor(){
-    this.user.emailId=this.doctor.emailId;
-    console.log(this.doctor);
-    console.log(this.user);
-  }}
+}

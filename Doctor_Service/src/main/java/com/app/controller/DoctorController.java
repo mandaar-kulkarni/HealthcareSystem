@@ -27,12 +27,10 @@ import com.app.service.IPatientService;
 @RestController
 @RequestMapping("/doctor")
 @Validated
-public class DoctorController {
-
-	
+public class DoctorController {	
 	@Autowired
 	IDoctorService doctorService;
-	
+
 	@Autowired
 	IPatientService patientService;
 	
@@ -63,7 +61,6 @@ public class DoctorController {
 		}
 		throw new ResourceNotFoundException("please enter valid patient id");
 	}
-	
 	
 	@PostMapping("/savePrescription")
 	public ResponseEntity<?> savePrescription(@RequestBody PrescriptionMedicineDto dto){

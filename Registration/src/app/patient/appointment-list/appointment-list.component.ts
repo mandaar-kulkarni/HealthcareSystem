@@ -20,7 +20,6 @@ export class AppointmentListComponent implements OnInit {
   showTable:boolean=true;
   showPrescription:boolean=false;
   patient=new Patient("","","","","","","");
-  patient2=new Patient("","","","","","","");
   message:string="";
   message1:string="";
   medPrescription:MedPrescription[]=[];

@@ -24,6 +24,7 @@ export class LoginComponent{
         sessionStorage.setItem("patient",JSON.stringify(response.patient));
         this.router.navigate(['appointmentlist']);
       }else if(response.role=="DOCTOR"){
+        sessionStorage.setItem("doctor",JSON.stringify(response.doctor));
         this.router.navigate(['listofappointment']);
       }
     },(error)=>{
