@@ -9,10 +9,10 @@
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Address</th>
-            <th scope="col">Update Doctor</th>
-            <th scope="col">Remove Doctor</th>
             <th scope="col">View License</th>
             <th scope="col">View Degree Certificate</th>
+            <th scope="col">Update Doctor</th>
+            <th scope="col">Remove Doctor</th>
         </tr>
       </thead>
 
@@ -23,10 +23,10 @@
           <td> {{ d.emailId }} </td>
           <td> {{ d.phoneNumber }} </td>
           <td> {{ d.address }} </td>
-          <td> <a>Select</a></td>
-          <td> <a>Select</a></td>
-          <td> <a>Select</a></td>
-          <td> <a>Select</a></td>
+          <td> <button (click)="showLicense(d.doctorId)">Select</button></td>
+          <td> <button (click)="showDC(d.doctorId)">Select</button></td>
+          <td> <button (click)="updateDoctor(d.doctorId)">Select</button></td>
+          <td> <button (click)="removeDoctor(d.doctorId)">Select</button></td>
       </tr>
       </tbody>
 

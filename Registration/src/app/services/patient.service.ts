@@ -1,8 +1,8 @@
-import { MedPrescription } from './dto/Prescription';
+import { MedPrescription } from '../dto/Prescription';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Appointment } from './appointment';
+import { Appointment } from '../pojos/appointment';
 
 @Injectable({
   providedIn: 'root'

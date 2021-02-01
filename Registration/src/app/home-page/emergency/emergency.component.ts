@@ -1,5 +1,5 @@
-import { Emergency } from './../../emergency';
 import { Component, OnInit } from '@angular/core';
+import { Emergency } from 'src/app/pojos/emergency';
 
 @Component({
   selector: 'app-emergency',

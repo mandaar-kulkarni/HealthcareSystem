@@ -35,12 +35,12 @@ public class Prescription {
 	private Date createdOn;
 	
 	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 	
 	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 

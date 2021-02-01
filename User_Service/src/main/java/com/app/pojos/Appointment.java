@@ -17,12 +17,12 @@ public class Appointment {
 	@Column(name = "appointment_time")
 	private LocalDate appointmentTime;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 
 	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doctor } from 'src/app/doctor';
-import { DoctorService } from 'src/app/doctor.service';
+import { Doctor } from 'src/app/pojos/doctor';
+import { DoctorService } from 'src/app/services/doctor.service';
 
 @Component({
   selector: 'app-list-of-appointment',
@@ -11,7 +11,7 @@ export class ListOfAppointmentComponent implements OnInit {
 
   doctor:Doctor;
   constructor(private service:DoctorService) {
-    this.doctor=JSON.parse(sessionStorage.getItem)
+    this.doctor=JSON.parse(sessionStorage.getItem("doctor") || '{}');
     this.appointmentList();
   }
 

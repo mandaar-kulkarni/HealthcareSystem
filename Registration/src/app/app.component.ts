@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Emergency } from './emergency';
+import { Emergency } from './pojos/emergency';
 
 @Component({
   selector: 'app-root',

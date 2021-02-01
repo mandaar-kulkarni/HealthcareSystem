@@ -26,11 +26,11 @@ public class Prescription {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdOn;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 

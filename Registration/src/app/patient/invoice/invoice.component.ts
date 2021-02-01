@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Invoice } from 'src/app/invoice';
+import { Invoice } from 'src/app/pojos/invoice';
 
 @Component({
   selector: 'app-invoice',

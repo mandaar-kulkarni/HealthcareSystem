@@ -18,11 +18,11 @@ public class Invoice {
 	@Column(name = "created_on")
 	private LocalDate createdOn;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 

@@ -2,6 +2,7 @@ package com.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,7 @@ import com.app.service.IUserService;
 @RestController
 @RequestMapping("/user")
 @CrossOrigin
+@Validated
 public class UserController {
 
 	@Autowired

@@ -1,33 +1,51 @@
-import { User } from '../../user';
-import { Component } from '@angular/core';
-import { Doctor } from '../../doctor';
+import { User } from '../../pojos/user';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TrailDoctor } from 'src/app/dto/TrailDoctor';
-import { AdminService } from 'src/app/admin.service';
+import { AdminService } from 'src/app/services/admin.service';
+import { Doctor } from 'src/app/pojos/doctor';
 
 @Component({
   selector: 'app-doctor-registration',
   templateUrl: './doctor-registration.component.html',
   styleUrls: ['./doctor-registration.component.css']
 })
-export class DoctorRegistrationComponent {
+export class DoctorRegistrationComponent implements OnInit, OnDestroy{
+  department:Array<string> = ['PODIATRIST', 'PEDIATRICIAN', 'NEUROLOGIST', 'ALLERGIST', 'SURGEON', 'OPHTHALMOLOGIST', 'DERMATOLOGIST', 'CARDIOLOGIST', 'ORTHOPEDIST'];
+//this is for passing data via service
+//object:TrailDoctor =new TrailDoctor(new Doctor("","","",new Date(),"","","",""),new User("",""));
 
-  doctor=new Doctor("","","",new Date(),"","","");
+  doctor=new Doctor("","","",new Date(),"","","","");
   user=new User("","","DOCTOR");
   confirmPassword:string="";
-  message:string=""
+  message:string="";
   degreeCertificate: File | undefined;
   license: File | undefined;
 
   constructor(private service:AdminService,private router:Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('doctorObject') != null && sessionStorage.getItem('doctorObject') != null ){
+      this.doctor=JSON.parse(sessionStorage.getItem('doctorObject') || '{}');
+      this.user=JSON.parse(sessionStorage.getItem('userObject') || '{}');
+      this.confirmPassword=this.user.password;
+    }
+//this is for passing data via service
+    //  this.object=this.service.getObject();
+  }
+
+  ngOnDestroy():void{
+    if(sessionStorage.getItem('doctorObject') != null && sessionStorage.getItem('userObject') != null ){
+      sessionStorage.removeItem('doctorObject');
+      sessionStorage.removeItem('userObject');
+    }
   }
 
   registerDoctor(){
     this.user.emailId=this.doctor.emailId;
     console.log(this.doctor);
     console.log(this.user);
+     this.ngOnDestroy();
     this.service.registerDoctor(new TrailDoctor(this.doctor,this.user))
     .subscribe(
       (response)=>{
@@ -48,6 +66,10 @@ export class DoctorRegistrationComponent {
     console.log(event);
     this.license = event.target.files[0];
   }
+
+
+
+ // this.response = JSON.parse(activatedRoute.snapshot.params["repertoire"]);
   //event handler function called when Upload btn is clicked
   //onUpload() {
     // this.uploadService.uploadFile(this.degreeCertificate,this.license,this.doctor).subscribe(

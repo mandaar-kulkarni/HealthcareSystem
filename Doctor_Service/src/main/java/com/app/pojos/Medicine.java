@@ -18,7 +18,7 @@ public class Medicine {
 	@Column(name = "quantity")
 	private int quantity;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "prescription_id")
 	private Prescription prescriptionId;
 

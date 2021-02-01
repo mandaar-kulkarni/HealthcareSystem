@@ -7,10 +7,10 @@ export class Doctor {
   phoneNumber:string;
   address:string;
   gender:string;
-  // password:string;
+  specialization?:string;
 
   constructor(firstName:string,lastName:string,emailId:string,dateOfBirth:Date,
-      phoneNumber:string,address:string,gender:string,doctorId?:number){
+      phoneNumber:string,address:string,gender:string,specialization:string,doctorId?:number){
           this.firstName=firstName;
           this.lastName=lastName;
           this.emailId=emailId;
@@ -19,6 +19,6 @@ export class Doctor {
           this.address=address;
           this.gender=gender;
           this.doctorId=doctorId;
-          // this.password=password;
-  }
+          this.specialization=specialization;
+        }
 }

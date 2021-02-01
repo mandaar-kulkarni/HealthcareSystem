@@ -1,8 +1,8 @@
-import { MedPrescription } from './../../dto/Prescription';
-import { PatientService } from './../../patient.service';
-import { Appointment } from './../../appointment';
+import { MedPrescription } from '../../dto/Prescription';
+import { PatientService } from '../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
-import { Patient } from 'src/app/patient';
+import { Patient } from 'src/app/pojos/patient';
+import { Appointment } from '../../pojos/appointment';
 
 @Component({
   selector: 'app-appointment-list',

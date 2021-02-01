@@ -1,6 +1,5 @@
-import { User } from './../user';
-import { Patient } from './../patient';
-import { Doctor } from '../doctor';
+import { User } from '../pojos/user';
+import { Doctor } from '../pojos/doctor';
 export class TrailDoctor{
     doctor:Doctor;
     user:User;

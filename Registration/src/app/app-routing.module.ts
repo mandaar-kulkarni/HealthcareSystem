@@ -1,5 +1,5 @@
 import { PrescriptionComponent } from './doctor/prescription/prescription.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DoctorRegistrationComponent } from './admin/doctor-registration/doctor-registration.component';
 import { ListOfDoctorsComponent } from './admin/list-of-doctors/list-of-doctors.component';

@@ -1,5 +1,5 @@
-import { Prescription } from './../../prescription';
-import { Medicine } from './../../medicine';
+import { Prescription } from '../../pojos/prescription';
+import { Medicine } from '../../pojos/medicine';
 import { Component, OnInit } from '@angular/core';
 
 

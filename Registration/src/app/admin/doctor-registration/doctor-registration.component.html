@@ -68,6 +68,15 @@
         </div>
     </div>
 
+    <!-- for Department-->
+<div class="form-group">
+  <label for="department" class="text">Department</label>
+  <select type="text" class="form-control" name="department" id="department" [(ngModel)]="doctor.specialization" required>
+  <!-- <option>Select department </option> -->
+  <option *ngFor="let d of department" value= {{d}}>{{d}} </option>
+  </select>
+</div>
+
     <hr style="border-top:1px solid rgb(0, 255, 21) ;">
     <h5 style="text-align: center" class="text">Please Enter Login Credentials</h5>
     <hr style="border-top:1px solid rgb(0, 255, 21) ;">

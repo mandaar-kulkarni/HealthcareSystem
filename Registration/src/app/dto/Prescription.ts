@@ -1,4 +1,4 @@
-import { Prescription } from './../prescription';
+import { Prescription } from '../pojos/prescription';
 export class MedPrescription{
 
     medicineId?:number;

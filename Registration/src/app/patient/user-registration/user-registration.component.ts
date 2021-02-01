@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { AuthenticateService } from './../../authenticate.service';
-import { User } from '../../user';
+import { AuthenticateService } from '../../services/authenticate.service';
+import { User } from '../../pojos/user';
 import { Component, OnInit } from '@angular/core';
-import { Patient } from '../../patient';
+import { Patient } from '../../pojos/patient';
 import { Trail } from 'src/app/dto/Trail';
 
 @Component({
@@ -29,7 +29,7 @@ export class UserRegistrationComponent {
     this.service.registerPatient(new Trail(this.patient,this.user))
     .subscribe(
       (response)=>{console.log(response);
-      this.router.navigate(['login']);  
+      this.router.navigate(['login']);
     }
     ,(error)=>{
       console.log(error);

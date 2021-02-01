@@ -1,8 +1,8 @@
-import { Patient } from './../../patient';
+import { Patient } from '../../pojos/patient';
 import { Router } from '@angular/router';
-import { AuthenticateService } from './../../authenticate.service';
+import { AuthenticateService } from '../../services/authenticate.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/user';
+import { User } from 'src/app/pojos/user';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +19,7 @@ export class LoginComponent{
     this.service.authenticateUser(this.user).subscribe((response)=>{
       console.log(response);
       if(response.role=="ADMIN"){
+        sessionStorage.setItem("admin",JSON.stringify(response.admin));
         this.router.navigate(['listofdoctor']);
       }else if(response.role=="PATIENT"){
         sessionStorage.setItem("patient",JSON.stringify(response.patient));
