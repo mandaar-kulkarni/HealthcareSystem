@@ -8,6 +8,6 @@ import com.app.pojos.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	User findByEmailIdAndPassword(String email,String password);
+	User findByEmailIdAndPasswordAndStatus(String email,String password,int status);
 	
 }

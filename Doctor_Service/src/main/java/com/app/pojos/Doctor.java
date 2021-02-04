@@ -56,12 +56,14 @@ public class Doctor {
 	@Column(length = 25)
 	private Department specialization;
 
+	@Column(name = "status")
+	private int status=1;
+
 	public Doctor() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	//for constructor expression
+
+	// for constructor expression
 	public Doctor(Integer doctorId, String firstName, String lastName, String emailId, String phoneNumber) {
 		super();
 		this.doctorId = doctorId;
@@ -70,8 +72,6 @@ public class Doctor {
 		this.emailId = emailId;
 		this.phoneNumber = phoneNumber;
 	}
-
-
 
 	public Doctor(Integer doctorId, String firstName, String lastName, String emailId, Date dateOfBirth,
 			String phoneNumber, String address, Gender gender, byte[] degreeCertificate, byte[] license,
@@ -177,6 +177,14 @@ public class Doctor {
 
 	public void setSpecialization(Department specialization) {
 		this.specialization = specialization;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	@Override

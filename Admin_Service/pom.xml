@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app</groupId>
-	<artifactId>User_Service</artifactId>
+	<artifactId>Admin_Service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>User_Service</name>
+	<name>Admin_Service</name>
 	<description>User Backend project</description>
 
 	<properties>

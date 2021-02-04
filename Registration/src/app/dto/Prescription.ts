@@ -1,9 +1,9 @@
-import { Prescription } from '../pojos/prescription';
+import { PrescriptionMedicineDTO } from '../pojos/prescription';
 export class MedPrescription{
 
     medicineId?:number;
     medicineName?:string;
     quantity?:number;
-    prescriptionId?:Prescription
+    prescriptionId?:PrescriptionMedicineDTO;
 
 }

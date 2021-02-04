@@ -1,6 +1,7 @@
 <div class="container" style="margin-top: 40px;">
   <div id="allAppointment" *ngIf="showTable">
     <h3 class="jumbotron element text"><strong>Scheduled Appoitments</strong></h3>
+    <button class="btn btn-warning" routerLink="/appointmentbooking">Book Appointment</button>
     <h2 class="text-danger" style="margin: auto;">{{ message }}</h2>
     <table class="table center text element">
       <thead>
@@ -16,7 +17,7 @@
         <tr *ngFor="let a of appointment">
           <td> {{ a.doctor?.firstName }} </td>
           <td>{{ a.appointmentTime }}</td>
-          <td><button class="btn btn-warning" (click)="getPrescription()">Get Prescription</button></td> 
+          <td><button class="btn btn-warning" (click)="getPrescription()">Get Prescription</button></td>
           <td><button class="btn btn-warning" (click)="getInvoice()">Get Invoice</button></td>
         </tr>
       </tbody>

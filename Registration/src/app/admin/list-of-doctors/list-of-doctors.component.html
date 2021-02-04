@@ -15,7 +15,6 @@
             <th scope="col">Remove Doctor</th>
         </tr>
       </thead>
-
       <tbody>
         <tr *ngFor="let d of doctorList">
           <td> {{ d.firstName }} </td>
@@ -23,10 +22,11 @@
           <td> {{ d.emailId }} </td>
           <td> {{ d.phoneNumber }} </td>
           <td> {{ d.address }} </td>
-          <td> <button (click)="showLicense(d.doctorId)">Select</button></td>
-          <td> <button (click)="showDC(d.doctorId)">Select</button></td>
-          <td> <button (click)="updateDoctor(d.doctorId)">Select</button></td>
-          <td> <button (click)="removeDoctor(d.doctorId)">Select</button></td>
+          <td> <button class="btn btn-success" (click)="showLicense(d.doctorId)">License</button></td>
+          <td> <button class="btn btn-success" (click)="showDC(d.doctorId)">Certificate</button></td>
+          <td> <button class="btn btn-warning" (click)="updateDoctor(d.doctorId)">Update
+          </button></td>
+          <td> <button class="btn btn-danger" (click)="removeDoctor(d.doctorId)">Remove</button></td>
       </tr>
       </tbody>
 
@@ -35,4 +35,19 @@
     <a href='regdoctor' class=" btn btn-primary text" style="border: 3px solid white;" >Add Doctor</a>
   </div>
 
+  <div class="container row">
+    <div class="col-md-12">
+        <div *ngIf=retrievedDC>
+            <img [src]="retrievedImageDC">
+        </div>
+    </div>
+</div>
+
+<div class="container row">
+  <div class="col-md-12">
+      <div *ngIf=retrievedLic>
+          <img [src]="retrievedImageLicense">
+      </div>
+  </div>
+</div>
 </div>

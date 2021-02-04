@@ -18,7 +18,7 @@ public class UserServiceImpl implements IUserService {
 	
 	@Override
 	public User authenticateUser(User user) {
-		return userDao.findByEmailIdAndPassword(user.getEmailId(), user.getPassword());
+		return userDao.findByEmailIdAndPasswordAndStatus(user.getEmailId(), user.getPassword(),1);
 	}
 
 	@Override

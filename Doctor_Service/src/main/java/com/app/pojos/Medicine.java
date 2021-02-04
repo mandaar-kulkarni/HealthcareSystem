@@ -2,7 +2,9 @@ package com.app.pojos;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @Entity
@@ -20,6 +22,7 @@ public class Medicine {
 
 	@ManyToOne
 	@JoinColumn(name = "prescription_id")
+	@JsonProperty
 	private Prescription prescriptionId;
 
 	public Medicine() {
@@ -58,6 +61,7 @@ public class Medicine {
 		this.quantity = quantity;
 	}
 
+	@JsonIgnore
 	public Prescription getPrescriptionId() {
 		return prescriptionId;
 	}

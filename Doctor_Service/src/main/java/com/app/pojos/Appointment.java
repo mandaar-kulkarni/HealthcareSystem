@@ -15,8 +15,12 @@ public class Appointment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "appointment_id")
 	private Integer appointmentId;
-	@Column(name = "appointment_time")
-	private LocalDate appointmentTime;
+
+	@Column(name = "appointment_date")
+	private LocalDate appointmentDate;
+
+	@Column(name = "appointment_time", length = 20)
+	private String appointmentTime;
 
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
@@ -26,23 +30,25 @@ public class Appointment {
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 
+	@Column(name = "status")
+	private int status = 1;
+
 	public Appointment() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	public Appointment(Integer appointmentId, LocalDate appointmentTime, Patient patient) {
+	public Appointment(Integer appointmentId, LocalDate appointmentDate, Patient patient,String appointmentTime) {
 		super();
 		this.appointmentId = appointmentId;
-		this.appointmentTime = appointmentTime;
+		this.appointmentDate = appointmentDate;
 		this.patient = patient;
+		this.appointmentTime=appointmentTime;
 	}
 
-
-	public Appointment(Integer appointmentId, LocalDate appointmentTime) {
+	public Appointment(Integer appointmentId, LocalDate appointmentDate) {
 		super();
 		this.appointmentId = appointmentId;
-		this.appointmentTime = appointmentTime;
+		this.appointmentDate = appointmentDate;
 	}
 
 	public Integer getAppointmentId() {
@@ -53,11 +59,19 @@ public class Appointment {
 		this.appointmentId = appointmentId;
 	}
 
-	public LocalDate getAppointmentTime() {
+	public LocalDate getAppointmentDate() {
+		return appointmentDate;
+	}
+
+	public void setAppointmentDate(LocalDate appointmentDate) {
+		this.appointmentDate = appointmentDate;
+	}
+
+	public String getAppointmentTime() {
 		return appointmentTime;
 	}
 
-	public void setAppointmentTime(LocalDate appointmentTime) {
+	public void setAppointmentTime(String appointmentTime) {
 		this.appointmentTime = appointmentTime;
 	}
 
@@ -75,6 +89,14 @@ public class Appointment {
 
 	public void setPatient(Patient patient) {
 		this.patient = patient;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	@Override

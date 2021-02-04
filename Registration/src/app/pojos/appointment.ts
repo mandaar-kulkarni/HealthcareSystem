@@ -2,11 +2,11 @@ import { Patient } from './patient';
 import { Doctor } from './doctor';
 export class Appointment {
   appointmentId?:number;
-  appointmentTime?: Date;
+  appointmentTime?: string;
   doctor?:Doctor;
   patient?:Patient;
 
-  constructor(appTime:Date){
+  constructor(appTime:string){
     this.appointmentTime=appTime;
   }
 }

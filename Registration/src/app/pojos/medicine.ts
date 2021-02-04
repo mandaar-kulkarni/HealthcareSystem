@@ -3,8 +3,6 @@ export class Medicine {
     medicineName:string;
     quantity:number;
 
-
-
     constructor(medicineName:string,quantity:number){
         this.medicineName=medicineName;
         this.quantity=quantity;

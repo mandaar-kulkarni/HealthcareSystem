@@ -3,16 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TrailDoctor } from '../dto/TrailDoctor';
 import { Doctor } from '../pojos/doctor';
-import { User } from '../pojos/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-//this is for passing data via service
-//object:TrailDoctor =new TrailDoctor(new Doctor("","","",new Date(),"","","",""),new User("",""));
-  constructor(private http:HttpClient) { }
 
+  constructor(private http:HttpClient) { }
   listOfDoctor():Observable<Doctor[]>{
     return this.http.get<Doctor[]>("http://localhost:8082/admin");
   }
@@ -29,13 +26,21 @@ export class AdminService {
     return this.http.get<TrailDoctor>("http://localhost:8082/admin/getDoctor/"+id);
   }
 
-//this is for passing data via service
-  // setObject(data:TrailDoctor){
-  //   this.object=data;
-  // }
+  uploadImage(degreeCertificate: File,license: File,doctor:Doctor) {
+      const uploadData = new FormData();
+      uploadData.append("degreeCertificate", degreeCertificate);
+      uploadData.append("license",license);
+      uploadData.append("doctor",JSON.stringify(doctor));
+      return this.http.post("http://localhost:8082/admin/upload", uploadData, { responseType: 'text' });
+    }
 
-  // getObject(){
-  //   return this.object;
-  // }
+  retriveDC(id:number){
+      return this.http.get<any>("http://localhost:8082/admin/getCertificate/"+id);
+  }
+
+  retriveLic(id:number){
+      return this.http.get<any>("http://localhost:8082/admin/getLicense/"+id);
+  }
 
 }
+

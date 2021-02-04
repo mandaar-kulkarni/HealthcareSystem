@@ -10,6 +10,8 @@ public interface IDoctorService {
 	
 	Doctor getDoctor(int id);
 	
+	Doctor getDoctorByEmailId(String emailId);
+	
 	void deleteDoctor(Doctor d);
 	
 	List<Appointment> getAppointment(Doctor doctor);

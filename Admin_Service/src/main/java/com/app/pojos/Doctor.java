@@ -1,4 +1,4 @@
-	package com.app.pojos;
+package com.app.pojos;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -8,6 +8,8 @@ import java.util.List;
 import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "doctors")
@@ -42,15 +44,28 @@ public class Doctor {
 
 	@Lob
 	@Column(name = "degree_certificate")
+	@JsonIgnore
 	private byte[] degreeCertificate;
 
 	@Lob
 	@Column(name = "license")
+	@JsonIgnore
 	private byte[] license;
+
+	@Column(length = 30)
+	@JsonIgnore
+	private String imageContentTypeDC;
+
+	@Column(length = 30)
+	@JsonIgnore
+	private String imageContentTypeLic;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 25)
 	private Department specialization;
+
+	@Column(name = "status")
+	private int status=1;
 
 	public Doctor() {
 		// TODO Auto-generated constructor stub
@@ -160,6 +175,30 @@ public class Doctor {
 
 	public void setSpecialization(Department specialization) {
 		this.specialization = specialization;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getImageContentTypeDC() {
+		return imageContentTypeDC;
+	}
+
+	public void setImageContentTypeDC(String imageContentTypeDC) {
+		this.imageContentTypeDC = imageContentTypeDC;
+	}
+
+	public String getImageContentTypeLic() {
+		return imageContentTypeLic;
+	}
+
+	public void setImageContentTypeLic(String imageContentTypeLic) {
+		this.imageContentTypeLic = imageContentTypeLic;
 	}
 
 	@Override

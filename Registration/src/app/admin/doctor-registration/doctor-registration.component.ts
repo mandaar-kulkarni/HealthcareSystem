@@ -19,8 +19,8 @@ export class DoctorRegistrationComponent implements OnInit, OnDestroy{
   user=new User("","","DOCTOR");
   confirmPassword:string="";
   message:string="";
-  degreeCertificate: File | undefined;
-  license: File | undefined;
+  degreeCertificate: File =null;
+  license: File =null;
 
   constructor(private service:AdminService,private router:Router) { }
 
@@ -50,6 +50,7 @@ export class DoctorRegistrationComponent implements OnInit, OnDestroy{
     .subscribe(
       (response)=>{
         console.log(response);
+        this.uploadImage(this.doctor);
       this.router.navigate(['listofdoctor']);
     }
     ,(error)=>{
@@ -67,17 +68,12 @@ export class DoctorRegistrationComponent implements OnInit, OnDestroy{
     this.license = event.target.files[0];
   }
 
-
-
- // this.response = JSON.parse(activatedRoute.snapshot.params["repertoire"]);
-  //event handler function called when Upload btn is clicked
-  //onUpload() {
-    // this.uploadService.uploadFile(this.degreeCertificate,this.license,this.doctor).subscribe(
-    //   resp => {
-    //     console.log(resp);
-    //     this.message = resp;
-    //   }
-    // );
- // }
-
+  uploadImage(doctor:Doctor){
+    this.service.uploadImage(this.degreeCertificate ,this.license,doctor).subscribe(
+      (response)=>{
+      console.log(response);
+    },(error)=>{
+      this.message=error.error.message;
+    });
+  }
 }

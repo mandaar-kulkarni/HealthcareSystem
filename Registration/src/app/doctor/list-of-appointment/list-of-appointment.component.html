@@ -1,6 +1,7 @@
 <div class="container" style="margin-top: 40px;">
   <div id="allAppointment">
     <h3 class="jumbotron element text"><strong>Scheduled Appoitments</strong></h3>
+
     <table class="table center text element">
       <thead>
         <tr style="color: rgb(0,255,21);">
@@ -8,31 +9,50 @@
             <th scope="col">Appointment Time</th>
             <th scope="col">Patient Details</th>
             <th scope="col">Prescription</th>
+            <th scope="col">Previous Prescription</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr scope="row">
-          <td>Mark</td>
-          <td>9AM</td>
-          <td><a href='#'>Select </a></td>
-          <td><a href='#'>Select </a></td>
-        </tr>
-        <tr scope="row">
-          <td>Jacob</td>
-          <td>10AM</td>
-          <td><a href='#'>Select </a></td>
-          <td><a href='#'>Select </a></td>
-        </tr>
-        <tr scope="row">
-          <td>Larry</td>
-          <td>12AM</td>
-          <td><a href="#">Select </a></td>
-          <td><a href='#'>Select </a></td>
+        <tr *ngFor="let a of listOfAppointment" scope="row">
+            <td> {{ a.patient.firstName }} </td>
+            <td> {{ a.appointmentTime }} </td>
+            <td><button (click)="showPatient(a.patient)">patient</button></td>
+            <button class="btn btn-success" (click)="gotoAddPrescription(a.patient.patientId,a.appointmentTime)">Add Prescription </button>
+            <td><button (click)= "getPrescription(a.patient.patientId)" > Get Prescription</button></td>
         </tr>
       </tbody>
-        <!-- <tr *ngFor="let a of appointment">
-            <td> {{ a.appointmentTime }} </td>
-
-        </tr> -->
     </table>
+  </div>
+
+  <div *ngIf="detailPatient" style="text-align: center; font-weight: bold ;" class="text">
+      <div>Patient Name :- {{ patient.firstName }} {{ patient.lastName }}
+      </div>
+      <div>Emailid :- {{ patient.emailId }}</div>
+      <div>Phone :- {{ patient.phoneNumber }}</div>
+      <div>Address :-{{ patient.address }} </div>
+      <div> Gender:- {{ patient.gender }}</div>
+      <div>Age:- {{ patient.age }}</div>
+  </div>
+
+  <div *ngIf="detailPrescription">
+    <h3 class="jumbotron element text"><strong>Prescription History</strong></h3>
+    <table class="table center text element">
+      <thead>
+        <tr style="color: rgb(0,255,21);">
+            <th scope="col">Medicine Name</th>
+            <th scope="col">Medicine Quantity</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of medicineHistory" scope="row">
+            <td> {{ a.medicineName }} </td>
+            <td> {{ a.quantity }} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

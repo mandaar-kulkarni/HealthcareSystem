@@ -1,6 +1,7 @@
 package com.app.pojos;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,13 +33,13 @@ public class Prescription {
 
 	@Column(name = "created_on")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date createdOn;
-	
+	private LocalDate createdOn;
+
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
-	
+
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "patient_id")
@@ -48,8 +49,6 @@ public class Prescription {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
 	public Prescription(Integer prescriptionId, String symptoms, String precautions) {
 		super();
 		this.prescriptionId = prescriptionId;
@@ -57,8 +56,7 @@ public class Prescription {
 		this.precautions = precautions;
 	}
 
-
-	public Prescription(Integer prescriptionId, String symptoms, String precautions, Date createdOn, Doctor doctor,
+	public Prescription(Integer prescriptionId, String symptoms, String precautions, LocalDate createdOn, Doctor doctor,
 			Patient patient) {
 		super();
 		this.prescriptionId = prescriptionId;
@@ -93,12 +91,12 @@ public class Prescription {
 		this.precautions = precautions;
 	}
 
-	public Date getCreatedOn() {
+	public LocalDate getCreatedOn() {
 		return createdOn;
 	}
 
-	public void setCreatedOn(Date createdOn) {
-		this.createdOn = createdOn;
+	public void setCreatedOn(LocalDate localDate) {
+		this.createdOn = localDate;
 	}
 
 	public Doctor getDoctor() {

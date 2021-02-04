@@ -20,6 +20,9 @@ public class User {
 	@Column(name = "person_role")
 	private Role personRole;
 
+	@Column(name = "status")
+	private int status=1;
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
@@ -62,6 +65,14 @@ public class User {
 
 	public void setPersonRole(Role personRole) {
 		this.personRole = personRole;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	@Override

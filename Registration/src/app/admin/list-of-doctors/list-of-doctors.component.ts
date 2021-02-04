@@ -3,7 +3,6 @@ import { AdminService } from 'src/app/services/admin.service';
 import { User } from 'src/app/pojos/user';
 import { Doctor } from 'src/app/pojos/doctor';
 import { Router } from '@angular/router';
-import { TrailDoctor } from 'src/app/dto/TrailDoctor';
 
 @Component({
   selector: 'app-list-of-doctors',
@@ -15,15 +14,15 @@ export class ListOfDoctorsComponent implements OnInit {
   user=new User("","","PATIENT");
   doctor = new Doctor("","","",new Date(),"","","","");
   doctorList:Doctor[]=[];
-//this is for passing data via service
-  // object:TrailDoctor =new TrailDoctor(new Doctor("","","",new Date(),"","","",""),new User("",""));
-
+  retrievedImageDC:any;
+  retrievedImageLicense:any;
   message:string="";
+  retrievedDC:boolean=false;
+  retrievedLic:boolean=false;
 
   constructor(private service:AdminService,private router:Router) {
     this.listOfDoctor();
    }
-  //doctor=new Doctor("","","",new Date(),"","","");
   ngOnInit(): void {
   }
 
@@ -56,22 +55,32 @@ export class ListOfDoctorsComponent implements OnInit {
     })
   }
 
-//this is for passing data via service
-  // updateDoctor(id:any){
-  //   this.service.updateDoctor(id).subscribe((response)=>{
-  //       this.service.setObject(response);
-  //       this.router.navigate(['regdoctor']);
-  //   },(error)=>{
-  //         this.message=error.error.message;
-  //   });
-  // }
-
   showDC(id:any){
-
+    this.service.retriveDC(id).subscribe((resp)=>{
+      this.retrievedImageDC = `data:${resp.type};base64,${resp.data}`;
+      this.retrievedDC=true;
+      this.retrievedLic=false;
+    },(error) => {
+    if (error.status === 404)
+    this.message = "Image Not Found!!!!";
+  else
+    this.message = `Server Error :${error.message}`;
+    this.retrievedImageDC=null;
+   })
   }
 
   showLicense(id:any){
-
+    this.service.retriveLic(id).subscribe((resp)=>{
+      this.retrievedImageLicense = `data:${resp.type};base64,${resp.data}`;
+      this.retrievedLic=true;
+      this.retrievedDC=false;
+    },(error) => {
+    if (error.status === 404)
+    this.message = "Image Not Found!!!!";
+  else
+    this.message = `Server Error :${error.message}`;
+    this.retrievedImageLicense=null;
+   })
   }
 
 }

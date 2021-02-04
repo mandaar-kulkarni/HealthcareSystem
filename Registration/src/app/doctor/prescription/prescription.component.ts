@@ -1,6 +1,9 @@
-import { Prescription } from '../../pojos/prescription';
 import { Medicine } from '../../pojos/medicine';
 import { Component, OnInit } from '@angular/core';
+import { DoctorService } from 'src/app/services/doctor.service';
+import { Router } from '@angular/router';
+import { MedPres } from 'src/app/dto/medPres';
+import { PrescriptionDTO } from 'src/app/dto/PrescriptionDto';
 
 
 @Component({
@@ -13,16 +16,22 @@ export class PrescriptionComponent implements OnInit {
   precaution: string = "";
   symptoms: string = "";
   medicineName: string = "";
+  message: string = "";
   quantity: number = 0;
   listOfMedicine: Medicine[] = [];
   showtable: boolean = false;
-  constructor() { }
+  patientId:number;
+  prescriptionDTO: PrescriptionDTO=new PrescriptionDTO();
+  appointmentTime:string;
 
+  constructor(private service:DoctorService,private router:Router ) {
+    this.patientId=this.router.getCurrentNavigation().extras.queryParams.patientId;
+    this.appointmentTime=this.router.getCurrentNavigation().extras.queryParams.time;
+    console.log(this.patientId);
+   }
 
   ngOnInit(): void {
-
   }
-
 
   addMedicine() {
     if (this.medicineName != "" && this.quantity != 0 ) {
@@ -57,7 +66,19 @@ export class PrescriptionComponent implements OnInit {
     if (this.medicineName != "" && this.quantity != 0) {
       this.listOfMedicine.push(new Medicine(this.medicineName, this.quantity));
     }
-    var pre = new Prescription(this.symptoms, this.precaution, new Date(), this.listOfMedicine);
-    console.log(pre);
+    var doc1=JSON.parse(sessionStorage.getItem("doctor"));
+    console.log(doc1.doctorId);
+    this.prescriptionDTO.doctorId=doc1.doctorId;
+    this.prescriptionDTO.patientId=this.patientId;
+    this.prescriptionDTO.precautions=this.precaution;
+    this.prescriptionDTO.symptoms=this.symptoms;
+    this.prescriptionDTO.appointmentTime=this.appointmentTime;
+    this.prescriptionDTO.listOfMedicine=this.listOfMedicine;
+      this.service.savePrescription(this.prescriptionDTO).subscribe(resp=>{
+        console.log(resp);
+        this.router.navigate(['listofappointment']);
+      },error=>{
+          this.message=error.error.message;
+      });
   }
 }

@@ -11,5 +11,7 @@ public interface IDoctorService {
 
 	List<Appointment> getAppointmentByDoctorId(int id);
 	
-	void savePrescription(Prescription prescription,List<Medicine> medicine);
+	void savePrescription(Prescription prescription,Medicine[] medicine,String appointmentTime);
+	
+	Doctor getDoctor(int id);
 }

@@ -16,33 +16,34 @@
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/regdoctor">Doctor Registration</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/register">Register Patient</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/listofdoctor">List of Doctor</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/listofappointment">Appointments</a>
-      </li>
-      <li class="nav-item">
-
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/prescription">Prescription</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/invoice">Invoice</a>
-      </li>
-      <li class="nav-item">
+      </li> -->
+      <!-- <li class="nav-item">
         <a class="nav-link" href="/appointmentbooking">appointment Booking</a>
-      </li>
-
-
+      </li> -->
 
       <li class="nav-item" >
-        <button class="nav-item embutton" onclick="document.getElementById('id01').style.display='block'">Emergency</button>
+        <div style="margin-left: 1250px">
+          <button class="nav-item embutton" onclick="document.getElementById('id01').style.display='block'">Emergency</button>
+            <button class="nav-item embutton" style="background-color:black;color:rgb(21, 255, 21);"
+            (click)="logout()">Logout</button>
+        </div>
         <p class="text-success">{{message}}</p>
         <div id="id01" class="modal">
           <form class="modal-content animate" #Registration="ngForm" (ngSubmit)="saveDetails()">
@@ -51,10 +52,11 @@
                 title="Close Modal">&times;</span>
             </div>
 
-            <div class="container">
+            <div class="container" style="width: 40%;">
               <div class="form-group">
                 <label class="text" for="firstName">Name</label>
-                <input type="text" class="form-control text" placeholder="Enter Name" name="firstName"
+                <br>
+                <input style="width: 50%;" type="text" class="form-control text" placeholder="Enter Name" name="firstName"
                   [(ngModel)]="emergency.name" #firstName="ngModel" required
                   [class.is-invalid]="firstName.invalid && firstName.touched">
                 <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
@@ -64,7 +66,8 @@
 
               <div class="form-group">
                 <label class="text" for="phoneNumber">Phone Number</label>
-                <input type="text" class="form-control text" placeholder="phoneNumber " name="phoneNumber"
+                <br>
+                <input style="width: 75%;" type="text" class="form-control text" placeholder="phoneNumber " name="phoneNumber"
                   [(ngModel)]="emergency.phoneNumber" #phoneNumber="ngModel" required
                   pattern="^((\\+91-?)|0)?[0-9]{10}$" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
                 <div *ngIf="phoneNumber.errors && (phoneNumber.invalid && phoneNumber.touched)">
@@ -76,7 +79,8 @@
 
               <div class="form-group">
                 <label class="text" for="address">Symptoms</label>
-                <input type="textarea" class="form-control" placeholder="address " name="address"
+                <br>
+                <input type="textarea" class="form-control text" style="width: 75%;" placeholder="address " name="address"
                   [(ngModel)]="emergency.symptoms" #address="ngModel" required maxlength="50"
                   [class.is-invalid]="address.invalid && address.touched">
                 <div *ngIf="address.errors && (address.invalid && address.touched)">
@@ -84,11 +88,11 @@
                   <span class="text-danger" *ngIf="address.errors.maxlength">Address length should be less than 50
                   </span>
                 </div>
+
+                <button type="submit" class="bookbutton" [disabled]="Registration.form.invalid">Book An Ambulance</button>
+
               </div>
-
-
-              <button type="submit" [disabled]="Registration.form.invalid">Book An Ambulance</button>
-            </div>
+              </div>
 
             <div class="container" style="background-color:#f1f1f1">
               <button type="button" onclick="document.getElementById('id01').style.display='none'"

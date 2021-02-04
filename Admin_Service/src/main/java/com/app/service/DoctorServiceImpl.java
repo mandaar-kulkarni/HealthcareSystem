@@ -41,7 +41,12 @@ public class DoctorServiceImpl implements IDoctorService {
 
 	@Override
 	public List<Doctor> getDoctorList() {
-		return docRepo.findAll();
+		return docRepo.findAllByStatus(1);
+	}
+
+	@Override
+	public Doctor getDoctorByEmailId(String emailId) {
+		return docRepo.findByEmailId(emailId);
 	}
 
 	

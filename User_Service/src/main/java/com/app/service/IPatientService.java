@@ -2,6 +2,7 @@ package com.app.service;
 
 import java.util.List;
 
+import com.app.dto.AppointmentDTO;
 import com.app.pojos.Appointment;
 import com.app.pojos.Medicine;
 import com.app.pojos.Patient;
@@ -18,4 +19,7 @@ public interface IPatientService {
 	Patient getPatient(Integer id);
 	
 	List<Medicine> getPrescriptionByPatientId(Patient patient);
+	
+	String checkAndSaveAppointment(AppointmentDTO appointment);
+
 }

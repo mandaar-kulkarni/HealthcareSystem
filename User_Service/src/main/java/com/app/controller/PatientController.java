@@ -5,12 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 
 import com.app.cust_excs.ResourceNotFoundException;
-import com.app.dto.Trail;
+import com.app.dto.*;
 import com.app.pojos.*;
 import com.app.service.*;
+import com.sun.xml.bind.v2.schemagen.xmlschema.Appinfo;
 
 @RestController
 @RequestMapping("/patient")
@@ -72,9 +74,21 @@ public class PatientController {
 	@GetMapping("/getDoctorBySpecification/{spec}")
 	public ResponseEntity<?> getDoctorsBySpecification(@PathVariable String spec) {
 		List<Doctor> listOfDoctors = doctorService.getDoctorBySpec(spec);
+		//System.out.println(listOfDoctors);
 		if (listOfDoctors.isEmpty())
 			throw new ResourceNotFoundException("No doctor available");
 		else
 			return ResponseEntity.ok(listOfDoctors);
+	}
+	
+	@PostMapping("/bookAppointment")
+	public String bookAppointment(@RequestBody AppointmentDTO appointment){
+		
+		System.out.println(appointment);
+		if(appointment ==null) {
+			throw new ResourceNotFoundException("Booking Failed!!");
+		}
+		String message = patientService.checkAndSaveAppointment(appointment);
+		return message;
 	}
 }

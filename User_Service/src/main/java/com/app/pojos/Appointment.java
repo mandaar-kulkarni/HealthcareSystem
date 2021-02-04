@@ -1,5 +1,6 @@
 package com.app.pojos;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import javax.persistence.*;
@@ -14,8 +15,12 @@ public class Appointment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "appointment_id")
 	private Integer appointmentId;
+
 	@Column(name = "appointment_time")
-	private LocalDate appointmentTime;
+	private String appointmentTime;
+
+	@Column(name = "appointment_date")
+	private LocalDate appointmentDate;
 
 	@ManyToOne
 	@JoinColumn(name = "doctor_id")
@@ -30,10 +35,20 @@ public class Appointment {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Appointment(Integer appointmentId, LocalDate appointmentTime) {
+	public Appointment(Integer appointmentId, String appointmentTime) {
 		super();
 		this.appointmentId = appointmentId;
 		this.appointmentTime = appointmentTime;
+	}
+
+	public Appointment(Integer appointmentId, String appointmentTime, LocalDate appointmentDate, Doctor doctor,
+			Patient patient) {
+		super();
+		this.appointmentId = appointmentId;
+		this.appointmentTime = appointmentTime;
+		this.appointmentDate = appointmentDate;
+		this.doctor = doctor;
+		this.patient = patient;
 	}
 
 	public Integer getAppointmentId() {
@@ -44,12 +59,20 @@ public class Appointment {
 		this.appointmentId = appointmentId;
 	}
 
-	public LocalDate getAppointmentTime() {
+	public String getAppointmentTime() {
 		return appointmentTime;
 	}
 
-	public void setAppointmentTime(LocalDate appointmentTime) {
+	public void setAppointmentTime(String appointmentTime) {
 		this.appointmentTime = appointmentTime;
+	}
+
+	public LocalDate getAppointmentDate() {
+		return appointmentDate;
+	}
+
+	public void setAppointmentDate(LocalDate appointmentDate) {
+		this.appointmentDate = appointmentDate;
 	}
 
 	public Doctor getDoctor() {

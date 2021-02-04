@@ -12,7 +12,7 @@ export class AppComponent {
     emergency =new Emergency("","","");
   message="";
   showForm:boolean=true;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +21,10 @@ export class AppComponent {
     console.log(this.emergency);
     this.showForm=false;
     this.message="We will reach you shortly!!!";
+  }
+
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate(['login']);
   }
 }
