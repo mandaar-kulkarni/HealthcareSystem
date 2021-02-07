@@ -166,3 +166,13 @@ span.psw {
   color: red;
   font-weight: bold;
 }
+
+#showMessage {
+  text-align: center;
+}
+
+/* #id01 {
+  width: 60%;
+  display: block;
+  margin-left: 20%;
+} */

@@ -45,7 +45,7 @@ export class DoctorRegistrationComponent implements OnInit, OnDestroy{
     this.user.emailId=this.doctor.emailId;
     console.log(this.doctor);
     console.log(this.user);
-     this.ngOnDestroy();
+    this.ngOnDestroy();
     this.service.registerDoctor(new TrailDoctor(this.doctor,this.user))
     .subscribe(
       (response)=>{

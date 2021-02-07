@@ -24,9 +24,6 @@ public class DoctorServiceImpl implements IDoctorService {
 
 	@Override
 	public List<Doctor> getDoctorBySpec(String spec) {
-		return doctorDao.findAllBySpecialization(Department.valueOf(spec));
+		return doctorDao.findAllBySpecializationAndStatus(Department.valueOf(spec),1);
 	}
-	
-	
-	
 }

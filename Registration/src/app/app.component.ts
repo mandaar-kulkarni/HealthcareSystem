@@ -8,10 +8,10 @@ import { Emergency } from './pojos/emergency';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Registration';
-    emergency =new Emergency("","","");
+  title = 'StayFit';
+  emergency =new Emergency("","","");
   message="";
-  showForm:boolean=true;
+  showForm:boolean=false;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -19,12 +19,21 @@ export class AppComponent {
 
   saveDetails(){
     console.log(this.emergency);
-    this.showForm=false;
+    this.showForm=true;
     this.message="We will reach you shortly!!!";
+    this.emergency.symptoms='';
+    this.emergency.name='';
+    this.emergency.phoneNumber='';
   }
 
   logout(){
     sessionStorage.clear();
     this.router.navigate(['login']);
+  }
+  cancellation(){
+    this.showForm=false;
+    // this.emergency.symptoms='';
+    // this.emergency.name='';
+    // this.emergency.phoneNumber='';
   }
 }

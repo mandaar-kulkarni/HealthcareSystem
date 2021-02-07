@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.app.pojos.Patient;
 
-
-
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
 

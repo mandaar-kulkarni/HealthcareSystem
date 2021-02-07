@@ -13,6 +13,6 @@ import com.app.pojos.Doctor;
 public interface DoctorRepository extends JpaRepository<Doctor, Integer> {
 	Doctor findByEmailId(String emailid);
 
-	@Query("Select new com.app.pojos.Doctor(d.doctorId,d.firstName,d.lastName,d.emailId,d.phoneNumber) from Doctor d where d.specialization=?1")
-	List<Doctor> findAllBySpecialization(Department spec);
+	@Query("Select new com.app.pojos.Doctor(d.doctorId,d.firstName,d.lastName,d.emailId,d.phoneNumber) from Doctor d where d.specialization=?1 and d.status=?2")
+	List<Doctor> findAllBySpecializationAndStatus(Department spec,int status);
 }

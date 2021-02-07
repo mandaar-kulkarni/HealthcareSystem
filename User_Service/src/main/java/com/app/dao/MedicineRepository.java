@@ -9,8 +9,8 @@ import com.app.pojos.Medicine;
 import com.app.pojos.Prescription;
 
 @Repository
-public interface MedicineRepository extends JpaRepository<Medicine,Integer> {
-	
+public interface MedicineRepository extends JpaRepository<Medicine, Integer> {
+
 	List<Medicine> findAllByPrescriptionId(Prescription p);
 
 }

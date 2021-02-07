@@ -8,7 +8,7 @@ import { Emergency } from 'src/app/pojos/emergency';
 })
 export class EmergencyComponent implements OnInit {
 
-  emergency =new Emergency("","","");
+  emergency:Emergency;
   message="";
   showForm:boolean=true;
   constructor() { }

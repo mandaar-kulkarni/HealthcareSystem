@@ -16,58 +16,38 @@
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/regdoctor">Doctor Registration</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/register">Register Patient</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/listofdoctor">List of Doctor</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/listofappointment">Appointments</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/prescription">Prescription</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/invoice">Invoice</a>
-      </li> -->
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="/appointmentbooking">appointment Booking</a>
-      </li> -->
 
       <li class="nav-item" >
         <div style="margin-left: 1250px">
-          <button class="nav-item embutton" onclick="document.getElementById('id01').style.display='block'">Emergency</button>
-            <button class="nav-item embutton" style="background-color:black;color:rgb(21, 255, 21);"
+          <button class="nav-item embutton" onclick="document.getElementById('id01').style.display='block'" >Emergency</button>
+          <button class="nav-item embutton" style="background-color:black;color:rgb(21, 255, 21);"
             (click)="logout()">Logout</button>
         </div>
-        <p class="text-success">{{message}}</p>
         <div id="id01" class="modal">
-          <form class="modal-content animate" #Registration="ngForm" (ngSubmit)="saveDetails()">
+          <form class="modal-content animate" #Emergency="ngForm" (ngSubmit)="saveDetails()">
+          <h5 class="text-success" *ngIf="showForm" id="showMessage">{{message}}</h5>
+
             <div class="imgcontainer">
               <span onclick="document.getElementById('id01').style.display='none'" class="close"
                 title="Close Modal">&times;</span>
             </div>
 
-            <div class="container" style="width: 40%;">
+            <div class="container" style="width: 30%;">
               <div class="form-group">
-                <label class="text" for="firstName">Name</label>
+                <label class="text" for="name">Name</label>
                 <br>
-                <input style="width: 50%;" type="text" class="form-control text" placeholder="Enter Name" name="firstName"
-                  [(ngModel)]="emergency.name" #firstName="ngModel" required
-                  [class.is-invalid]="firstName.invalid && firstName.touched">
-                <div *ngIf="firstName.errors && (firstName.invalid && firstName.touched)">
-                  <span class="text-danger" *ngIf="firstName.errors.required">Name is required</span>
+                <input style="width: 80%;" type="text" class="form-control text" placeholder="Enter Name" name="name" id="name"
+                  [(ngModel)]="emergency.name" #name="ngModel" required
+                  [class.is-invalid]="name.invalid">
+                <div *ngIf="name.errors && (name.invalid && name.touched)">
+                  <span class="text-danger" *ngIf="name.errors.required">Name is required</span>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="text" for="phoneNumber">Phone Number</label>
                 <br>
-                <input style="width: 75%;" type="text" class="form-control text" placeholder="phoneNumber " name="phoneNumber"
+                <input style="width: 80%;" type="text" class="form-control text" placeholder="phoneNumber " name="phoneNumber"
                   [(ngModel)]="emergency.phoneNumber" #phoneNumber="ngModel" required
                   pattern="^((\\+91-?)|0)?[0-9]{10}$" [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched">
                 <div *ngIf="phoneNumber.errors && (phoneNumber.invalid && phoneNumber.touched)">
@@ -78,32 +58,31 @@
               </div>
 
               <div class="form-group">
-                <label class="text" for="address">Symptoms</label>
+                <label class="text" for="symptoms">Symptoms</label>
                 <br>
-                <input type="textarea" class="form-control text" style="width: 75%;" placeholder="address " name="address"
-                  [(ngModel)]="emergency.symptoms" #address="ngModel" required maxlength="50"
-                  [class.is-invalid]="address.invalid && address.touched">
-                <div *ngIf="address.errors && (address.invalid && address.touched)">
-                  <span class="text-danger" *ngIf="address.errors.required">Address is required</span>
-                  <span class="text-danger" *ngIf="address.errors.maxlength">Address length should be less than 50
+                <input type="textarea" class="form-control text" style="width: 80%;" placeholder="symptoms " name="symptoms"
+                  [(ngModel)]="emergency.symptoms" #symptoms="ngModel" required maxlength="50"
+                  [class.is-invalid]="symptoms.invalid && symptoms.touched">
+                <div *ngIf="symptoms.errors && (symptoms.invalid && symptoms.touched)">
+                  <span class="text-danger" *ngIf="symptoms.errors.required">Symptoms is required</span>
+                  <span class="text-danger" *ngIf="symptoms.errors.maxlength">Symptoms length should be less than 50
                   </span>
                 </div>
 
-                <button type="submit" class="bookbutton" [disabled]="Registration.form.invalid">Book An Ambulance</button>
+                <button type="submit" class="bookbutton" [disabled]="Emergency.form.invalid">Book An Ambulance</button>
 
               </div>
               </div>
 
-            <div class="container" style="background-color:#f1f1f1">
+            <div class="container" >
               <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                class="cancelbtn">Cancel</button>
+                class="cancelbtn" (click)="cancellation()">Cancel</button>
             </div>
           </form>
         </div>
       </li>
     </ul>
   </div>
-<!-- </div> -->
 </nav>
 
 <router-outlet></router-outlet>
